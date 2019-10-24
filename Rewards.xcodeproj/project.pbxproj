@@ -38,7 +38,6 @@
 		0E4A6E7B23607364003C6399 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
 		0E4A6E7C23607364003C6399 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
 		0E4A6E7D23607364003C6399 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
-		0E4A6E8123607436003C6399 /* JSONDecoder+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E8023607436003C6399 /* JSONDecoder+Extensions.swift */; };
 		0E4A6E82236076D9003C6399 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
 		0E4A6E83236076D9003C6399 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
 		0E4A6E84236076D9003C6399 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
@@ -92,7 +91,6 @@
 		0E4A6E7723607364003C6399 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0E4A6E7823607364003C6399 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		0E4A6E7923607364003C6399 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
-		0E4A6E8023607436003C6399 /* JSONDecoder+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "JSONDecoder+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				0E27176B2360796600883177 /* Models */,
-				0E4A6E8023607436003C6399 /* JSONDecoder+Extensions.swift */,
 				0E2717692360791600883177 /* EndpointConfiguration.swift */,
 				0E271776236194B300883177 /* Requests */,
 				0E2717712361934D00883177 /* IdentityService */,
@@ -474,7 +471,6 @@
 				0E27177E2361B27000883177 /* APIError.swift in Sources */,
 				0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */,
 				0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */,
-				0E4A6E8123607436003C6399 /* JSONDecoder+Extensions.swift in Sources */,
 				0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */,
 				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
 				0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */,
