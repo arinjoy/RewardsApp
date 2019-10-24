@@ -10,7 +10,7 @@ import Foundation
 
 /// An enumeration of potential API related error
 /// This can be elaborated in future
-enum APIError: Error {
+public enum APIError: Error {
     case unAuthorized
     case forbidden
     case seviceUnavailable

@@ -16,17 +16,17 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let serve = IdentityService()
+        let serve = IdentityServiceClient(dataSource: HTTPClient())
         
-        serve.otpLogin(withPin: "12")
+        serve.otpLogin(withPin: "1234")
             .observeOn(MainScheduler.instance)
-            .subscribe(onNext: {  result in
+            .subscribe(onSuccess: {  result in
                     print(result)
                 }, onError: { error in
                     print(error)
             })
             .disposed(by: disposeBag)
-        
+    
     }
 }
 

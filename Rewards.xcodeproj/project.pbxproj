@@ -16,6 +16,19 @@
 		0E2717792361987000883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
 		0E27177A2361989E00883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
 		0E27177E2361B27000883177 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27177D2361B27000883177 /* APIError.swift */; };
+		0E2717812361C0D000883177 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E27177F2361C0D000883177 /* Nimble.framework */; };
+		0E2717822361C0D000883177 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2717802361C0D000883177 /* Quick.framework */; };
+		0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717892361C11800883177 /* OTPLoginRequestSpec.swift */; };
+		0E2717912361C13D00883177 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
+		0E2717922361C13D00883177 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E27177F2361C0D000883177 /* Nimble.framework */; };
+		0E2717932361C13D00883177 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
+		0E2717942361C13D00883177 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2717802361C0D000883177 /* Quick.framework */; };
+		0E2717952361C13D00883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
+		0E2717962361C13D00883177 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
+		0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717982361CEDD00883177 /* ObservableDataSource.swift */; };
+		0E27179B2361CF9200883177 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27179A2361CF9200883177 /* HTTPClient.swift */; };
+		0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3312A12362380C00FF89B5 /* IdentityServiceSpec.swift */; };
+		0E3312A723623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3312A623623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift */; };
 		0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5523606EEE003C6399 /* AppDelegate.swift */; };
 		0E4A6E5823606EEE003C6399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5723606EEE003C6399 /* ViewController.swift */; };
 		0E4A6E5B23606EEE003C6399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5923606EEE003C6399 /* Main.storyboard */; };
@@ -32,6 +45,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		0E27178C2361C11800883177 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0E4A6E4A23606EEE003C6399 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0E4A6E5123606EEE003C6399;
+			remoteInfo = Rewards;
+		};
 		0E4A6E6723606EF0003C6399 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0E4A6E4A23606EEE003C6399 /* Project object */;
@@ -49,6 +69,15 @@
 		0E271774236193F200883177 /* IdentityService+OTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentityService+OTP.swift"; sourceTree = "<group>"; };
 		0E271777236194DF00883177 /* OTPLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginRequest.swift; sourceTree = "<group>"; };
 		0E27177D2361B27000883177 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		0E27177F2361C0D000883177 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		0E2717802361C0D000883177 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		0E2717872361C11700883177 /* RewardsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RewardsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E2717892361C11800883177 /* OTPLoginRequestSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginRequestSpec.swift; sourceTree = "<group>"; };
+		0E27178B2361C11800883177 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E2717982361CEDD00883177 /* ObservableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableDataSource.swift; sourceTree = "<group>"; };
+		0E27179A2361CF9200883177 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		0E3312A12362380C00FF89B5 /* IdentityServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdentityServiceSpec.swift; sourceTree = "<group>"; };
+		0E3312A623623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableDataSource+TestDoubles.swift"; sourceTree = "<group>"; };
 		0E4A6E5223606EEE003C6399 /* Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A6E5523606EEE003C6399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E4A6E5723606EEE003C6399 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -67,10 +96,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0E2717842361C11700883177 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E2717912361C13D00883177 /* Alamofire.framework in Frameworks */,
+				0E2717922361C13D00883177 /* Nimble.framework in Frameworks */,
+				0E2717932361C13D00883177 /* PKHUD.framework in Frameworks */,
+				0E2717942361C13D00883177 /* Quick.framework in Frameworks */,
+				0E2717952361C13D00883177 /* RxSwift.framework in Frameworks */,
+				0E2717962361C13D00883177 /* SnapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E4A6E4F23606EEE003C6399 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2717812361C0D000883177 /* Nimble.framework in Frameworks */,
+				0E2717822361C0D000883177 /* Quick.framework in Frameworks */,
 				0E2717792361987000883177 /* RxSwift.framework in Frameworks */,
 				0E4A6E7B23607364003C6399 /* Alamofire.framework in Frameworks */,
 				0E4A6E7C23607364003C6399 /* SnapKit.framework in Frameworks */,
@@ -111,6 +155,8 @@
 				0E2717712361934D00883177 /* IdentityService */,
 				0E2717722361938A00883177 /* BaseRequest.swift */,
 				0E27177D2361B27000883177 /* APIError.swift */,
+				0E2717982361CEDD00883177 /* ObservableDataSource.swift */,
+				0E27179A2361CF9200883177 /* HTTPClient.swift */,
 			);
 			path = DataLayer;
 			sourceTree = "<group>";
@@ -139,11 +185,47 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		0E2717882361C11800883177 /* RewardsTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E2717A12361DE4B00883177 /* DataLayer */,
+				0E27178B2361C11800883177 /* Info.plist */,
+			);
+			path = RewardsTests;
+			sourceTree = "<group>";
+		};
+		0E2717A12361DE4B00883177 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0E3312A5236239F600FF89B5 /* Mocks */,
+				0E3312A823623B6900FF89B5 /* Identity */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		0E3312A5236239F600FF89B5 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0E3312A623623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		0E3312A823623B6900FF89B5 /* Identity */ = {
+			isa = PBXGroup;
+			children = (
+				0E2717892361C11800883177 /* OTPLoginRequestSpec.swift */,
+				0E3312A12362380C00FF89B5 /* IdentityServiceSpec.swift */,
+			);
+			path = Identity;
+			sourceTree = "<group>";
+		};
 		0E4A6E4923606EEE003C6399 = {
 			isa = PBXGroup;
 			children = (
 				0E4A6E5423606EEE003C6399 /* Rewards */,
 				0E4A6E6923606EF0003C6399 /* RewardsUITests */,
+				0E2717882361C11800883177 /* RewardsTests */,
 				0E4A6E5323606EEE003C6399 /* Products */,
 				0E4A6E7523607364003C6399 /* Frameworks */,
 			);
@@ -154,6 +236,7 @@
 			children = (
 				0E4A6E5223606EEE003C6399 /* Rewards.app */,
 				0E4A6E6623606EF0003C6399 /* RewardsUITests.xctest */,
+				0E2717872361C11700883177 /* RewardsTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +267,8 @@
 		0E4A6E7523607364003C6399 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E27177F2361C0D000883177 /* Nimble.framework */,
+				0E2717802361C0D000883177 /* Quick.framework */,
 				0E4A6E7723607364003C6399 /* Alamofire.framework */,
 				0E4A6E7923607364003C6399 /* PKHUD.framework */,
 				0E4A6E7623607364003C6399 /* RxSwift.framework */,
@@ -195,6 +280,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0E2717862361C11700883177 /* RewardsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0E27178E2361C11800883177 /* Build configuration list for PBXNativeTarget "RewardsTests" */;
+			buildPhases = (
+				0E2717832361C11700883177 /* Sources */,
+				0E2717842361C11700883177 /* Frameworks */,
+				0E2717852361C11700883177 /* Resources */,
+				0E2717972361C14500883177 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0E27178D2361C11800883177 /* PBXTargetDependency */,
+			);
+			name = RewardsTests;
+			productName = RewardsTests;
+			productReference = 0E2717872361C11700883177 /* RewardsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		0E4A6E5123606EEE003C6399 /* Rewards */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0E4A6E6F23606EF0003C6399 /* Build configuration list for PBXNativeTarget "Rewards" */;
@@ -241,6 +345,10 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Arinjoy Biswas";
 				TargetAttributes = {
+					0E2717862361C11700883177 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 0E4A6E5123606EEE003C6399;
+					};
 					0E4A6E5123606EEE003C6399 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -265,11 +373,19 @@
 			targets = (
 				0E4A6E5123606EEE003C6399 /* Rewards */,
 				0E4A6E6523606EF0003C6399 /* RewardsUITests */,
+				0E2717862361C11700883177 /* RewardsTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0E2717852361C11700883177 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E4A6E5023606EEE003C6399 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -290,6 +406,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		0E2717972361C14500883177 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n\n";
+		};
 		0E4A6E7E236073D1003C6399 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +439,8 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
+				"/$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
+				"/$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -314,12 +453,23 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0E2717832361C11700883177 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */,
+				0E3312A723623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift in Sources */,
+				0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0E4A6E4E23606EEE003C6399 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0E2717732361938A00883177 /* BaseRequest.swift in Sources */,
 				0E4A6E5823606EEE003C6399 /* ViewController.swift in Sources */,
+				0E27179B2361CF9200883177 /* HTTPClient.swift in Sources */,
 				0E27176D236079CA00883177 /* LoginToken.swift in Sources */,
 				0E27177E2361B27000883177 /* APIError.swift in Sources */,
 				0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */,
@@ -327,6 +477,7 @@
 				0E4A6E8123607436003C6399 /* JSONDecoder+Extensions.swift in Sources */,
 				0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */,
 				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
+				0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */,
 				0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -342,6 +493,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0E27178D2361C11800883177 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0E4A6E5123606EEE003C6399 /* Rewards */;
+			targetProxy = 0E27178C2361C11800883177 /* PBXContainerItemProxy */;
+		};
 		0E4A6E6823606EF0003C6399 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0E4A6E5123606EEE003C6399 /* Rewards */;
@@ -369,6 +525,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0E27178F2361C11800883177 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9D2CDZVV47;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RewardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.arin.RewardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rewards.app/Rewards";
+			};
+			name = Debug;
+		};
+		0E2717902361C11800883177 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9D2CDZVV47;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = RewardsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.app.arin.RewardsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rewards.app/Rewards";
+			};
+			name = Release;
+		};
 		0E4A6E6D23606EF0003C6399 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -582,6 +786,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0E27178E2361C11800883177 /* Build configuration list for PBXNativeTarget "RewardsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0E27178F2361C11800883177 /* Debug */,
+				0E2717902361C11800883177 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0E4A6E4D23606EEE003C6399 /* Build configuration list for PBXProject "Rewards" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

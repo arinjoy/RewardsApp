@@ -9,35 +9,29 @@
 import RxSwift
 import Alamofire
 
-class IdentityService {
+protocol IdentityServiceClientType {
+    func otpLogin(withPin pin: String) -> Single<LoginToken>
+}
+
+class IdentityServiceClient: IdentityServiceClientType {
     
+    private let dataSource: ObservableDataSource
+    
+    init(dataSource: ObservableDataSource) {
+        self.dataSource = dataSource
+    }
     
     /// Performs an OTP based login
     ///
     /// - Parameter pin: The pin to validate
     /// - Returns: `Observable` in terms of success/failure state
-    func otpLogin(withPin pin: String) -> Observable<LoginToken> {
+    func otpLogin(withPin pin: String) -> Single<LoginToken> {
         
         let otpLoginURL = EndpointConfiguration.absoluteURL(for: .login)
         
         let otpLoginRequest = OTPLoginRequest(url: otpLoginURL, pin: pin)
         
-         return Observable.create { observer -> Disposable in
-            
-            Alamofire.request(otpLoginRequest.urlRequest)
-                .responseData { response in
-                    let decoder = JSONDecoder()
-                    let result: Result<LoginToken> = decoder.decodeResponse(from: response)
-                    switch result {
-                    case .success(let token):
-                        observer.onNext(token)
-                    case .failure(let error):
-                        observer.onError(error)
-                    }
-                }
-            
-            return Disposables.create()
-         }
+        return dataSource.fetchSingleObject(with: otpLoginRequest)
     }
 }
 
