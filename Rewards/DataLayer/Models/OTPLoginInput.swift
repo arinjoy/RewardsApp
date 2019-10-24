@@ -1,5 +1,5 @@
 //
-//  LoginInput.swift
+//  OTPLoginInput.swift
 //  Rewards
 //
 //  Created by Arinjoy Biswas on 23/10/19.
@@ -8,6 +8,9 @@
 
 import Foundation
 
-struct LoginInput: Encodable {
+/// A data structure for OTP Login request body
+struct OTPLoginInput: Encodable {
+    
+    /// Tye user typed code to send for authetication
     let code: String
 }

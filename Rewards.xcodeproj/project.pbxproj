@@ -7,10 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0E271768236078B400883177 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E271767236078B400883177 /* ApiClient.swift */; };
-		0E27176A2360791600883177 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* Config.swift */; };
-		0E27176D236079CA00883177 /* LoginStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginStatus.swift */; };
-		0E27176F23607A5000883177 /* LoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* LoginInput.swift */; };
+		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
+		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
+		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
+		0E2717732361938A00883177 /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717722361938A00883177 /* BaseRequest.swift */; };
+		0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E271774236193F200883177 /* IdentityService+OTP.swift */; };
+		0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E271777236194DF00883177 /* OTPLoginRequest.swift */; };
+		0E2717792361987000883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
+		0E27177A2361989E00883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
+		0E27177E2361B27000883177 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27177D2361B27000883177 /* APIError.swift */; };
 		0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5523606EEE003C6399 /* AppDelegate.swift */; };
 		0E4A6E5823606EEE003C6399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5723606EEE003C6399 /* ViewController.swift */; };
 		0E4A6E5B23606EEE003C6399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5923606EEE003C6399 /* Main.storyboard */; };
@@ -37,10 +42,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0E271767236078B400883177 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		0E2717692360791600883177 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		0E27176C236079CA00883177 /* LoginStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginStatus.swift; sourceTree = "<group>"; };
-		0E27176E23607A5000883177 /* LoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInput.swift; sourceTree = "<group>"; };
+		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
+		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
+		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
+		0E2717722361938A00883177 /* BaseRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRequest.swift; sourceTree = "<group>"; };
+		0E271774236193F200883177 /* IdentityService+OTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentityService+OTP.swift"; sourceTree = "<group>"; };
+		0E271777236194DF00883177 /* OTPLoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginRequest.swift; sourceTree = "<group>"; };
+		0E27177D2361B27000883177 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		0E4A6E5223606EEE003C6399 /* Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A6E5523606EEE003C6399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E4A6E5723606EEE003C6399 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2717792361987000883177 /* RxSwift.framework in Frameworks */,
 				0E4A6E7B23607364003C6399 /* Alamofire.framework in Frameworks */,
 				0E4A6E7C23607364003C6399 /* SnapKit.framework in Frameworks */,
 				0E4A6E7D23607364003C6399 /* PKHUD.framework in Frameworks */,
@@ -73,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E27177A2361989E00883177 /* RxSwift.framework in Frameworks */,
 				0E4A6E82236076D9003C6399 /* Alamofire.framework in Frameworks */,
 				0E4A6E83236076D9003C6399 /* PKHUD.framework in Frameworks */,
 				0E4A6E84236076D9003C6399 /* SnapKit.framework in Frameworks */,
@@ -85,10 +95,48 @@
 		0E27176B2360796600883177 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0E27176C236079CA00883177 /* LoginStatus.swift */,
-				0E27176E23607A5000883177 /* LoginInput.swift */,
+				0E27176C236079CA00883177 /* LoginToken.swift */,
+				0E27176E23607A5000883177 /* OTPLoginInput.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0E2717702361934000883177 /* DataLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0E27176B2360796600883177 /* Models */,
+				0E4A6E8023607436003C6399 /* JSONDecoder+Extensions.swift */,
+				0E2717692360791600883177 /* EndpointConfiguration.swift */,
+				0E271776236194B300883177 /* Requests */,
+				0E2717712361934D00883177 /* IdentityService */,
+				0E2717722361938A00883177 /* BaseRequest.swift */,
+				0E27177D2361B27000883177 /* APIError.swift */,
+			);
+			path = DataLayer;
+			sourceTree = "<group>";
+		};
+		0E2717712361934D00883177 /* IdentityService */ = {
+			isa = PBXGroup;
+			children = (
+				0E271774236193F200883177 /* IdentityService+OTP.swift */,
+			);
+			path = IdentityService;
+			sourceTree = "<group>";
+		};
+		0E271776236194B300883177 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				0E271777236194DF00883177 /* OTPLoginRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		0E27177C2361AC0100883177 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0E4A6E5723606EEE003C6399 /* ViewController.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		0E4A6E4923606EEE003C6399 = {
@@ -113,10 +161,9 @@
 		0E4A6E5423606EEE003C6399 /* Rewards */ = {
 			isa = PBXGroup;
 			children = (
-				0E27176B2360796600883177 /* Models */,
-				0E4A6E7F23607410003C6399 /* Services */,
+				0E27177C2361AC0100883177 /* Scenes */,
+				0E2717702361934000883177 /* DataLayer */,
 				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
-				0E4A6E5723606EEE003C6399 /* ViewController.swift */,
 				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
 				0E4A6E5C23606EF0003C6399 /* Assets.xcassets */,
 				0E4A6E5E23606EF0003C6399 /* LaunchScreen.storyboard */,
@@ -143,16 +190,6 @@
 				0E4A6E7823607364003C6399 /* SnapKit.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		0E4A6E7F23607410003C6399 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				0E4A6E8023607436003C6399 /* JSONDecoder+Extensions.swift */,
-				0E271767236078B400883177 /* ApiClient.swift */,
-				0E2717692360791600883177 /* Config.swift */,
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +301,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
+				"/$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -280,13 +318,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2717732361938A00883177 /* BaseRequest.swift in Sources */,
 				0E4A6E5823606EEE003C6399 /* ViewController.swift in Sources */,
-				0E27176D236079CA00883177 /* LoginStatus.swift in Sources */,
-				0E27176F23607A5000883177 /* LoginInput.swift in Sources */,
+				0E27176D236079CA00883177 /* LoginToken.swift in Sources */,
+				0E27177E2361B27000883177 /* APIError.swift in Sources */,
+				0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */,
+				0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */,
 				0E4A6E8123607436003C6399 /* JSONDecoder+Extensions.swift in Sources */,
-				0E27176A2360791600883177 /* Config.swift in Sources */,
+				0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */,
+				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
 				0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */,
-				0E271768236078B400883177 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
