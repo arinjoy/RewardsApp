@@ -11,9 +11,13 @@ import Foundation
 /// An enumeration of potential API related error
 /// This can be elaborated in future
 public enum APIError: Error {
+    
+    case networkFailure
+    case timeout
+    
     case unAuthorized
     case forbidden
     case seviceUnavailable
     case server
-    case dataError
+    case noDataError
 }

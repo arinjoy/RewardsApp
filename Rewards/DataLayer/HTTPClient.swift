@@ -38,12 +38,23 @@ extension JSONDecoder {
     
     func decodeResponse<T: Decodable>(from response: DataResponse<Data>) -> Result<T> {
         
+        // Networking and API client related errors here
         if let error = response.error {
-            // Networking and API client related errors here
+
+            let networkError: NSError = error as NSError
+            switch networkError.code {
+            case NSURLErrorNotConnectedToInternet:
+                return .failure(APIError.networkFailure)
+            case NSURLErrorTimedOut:
+                return .failure(APIError.timeout)
+            default:
+                break
+            }
             return .failure(error)
         }
         
         if let statusCode = response.response?.statusCode {
+            
             switch statusCode {
             case 401:
                 return .failure(APIError.unAuthorized)
@@ -62,7 +73,7 @@ extension JSONDecoder {
         // we expect response may have some data (including error body sent from server)
         // If not, treat as missing data error
         guard let responseData = response.data else {
-            return .failure(APIError.dataError)
+            return .failure(APIError.noDataError)
         }
         
         // If response data body exists, try to decode from JSON as expected Data type
