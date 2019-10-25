@@ -54,10 +54,17 @@ final class OTPLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configureUILayuout()
+        configureUILayout()
+        applyStyle()
         
         keyboardTracker.setScrollView(scrollView)
         tapDismissManager.configure(withTargetView: self.view)
+        
+        inputTextField.delegate = self
+        
+        titleLabel.text = "Please enter your OTP"
+        inputTextField.placeholder = "OTP Code"
+        inputTextField.title = "4 digit code"
  
     }
     
@@ -73,25 +80,56 @@ final class OTPLoginViewController: UIViewController {
         keyboardTracker.removeNotifications()
     }
     
-    private func configureUILayuout() {
+    
+    private func configureUILayout() {
         
-        titleLabel.text = "Please Enter your OTP"
-        inputTextField.placeholder = "Enter OTP"
-        inputTextField.title = "4 digit code"
+        titleLabel.numberOfLines = 0
         
-        submitButton.setTitle("Submit", for: .normal)
-        submitButton.setTitleColor(.red, for: .normal)
+        submitButton.setImage(Icon.loginSubmit.icon, for: .normal)
+        submitButton.contentEdgeInsets = .zero
         
+        inputTextField.snp.makeConstraints { make in
+            make.width.equalTo(170)
+            make.height.equalTo(70)
+        }
         
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.distribution = .fill
-        stackView.spacing = 20
-        stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(inputTextField)
-        stackView.addArrangedSubview(submitButton)
-
-        scrollView.addSubview(stackView)
+        submitButton.snp.makeConstraints { make in
+            make.width.equalTo(67)
+            make.height.equalTo(50)
+        }
+        
+        let inputContainerView = UIView()
+        inputContainerView.translatesAutoresizingMaskIntoConstraints = false
+        inputContainerView.addSubview(inputTextField)
+        inputContainerView.addSubview(submitButton)
+        
+        inputTextField.snp.makeConstraints { make in
+            make.leading.top.bottom.equalToSuperview()
+        }
+        
+        submitButton.snp.makeConstraints { make in
+            make.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
+            make.leading.equalTo(inputTextField.snp.trailing).offset(5)
+        }
+        
+        let containerStackView = UIStackView()
+        containerStackView.axis = .vertical
+        containerStackView.distribution = .fill
+        containerStackView.alignment = .center
+        containerStackView.spacing = 50
+        
+        let topPadder = UIView(frame: CGRect.zero)
+        topPadder.backgroundColor = .clear
+        topPadder.snp.makeConstraints { make in
+            make.height.equalTo(100)
+        }
+        
+        containerStackView.addArrangedSubview(topPadder)
+        containerStackView.addArrangedSubview(titleLabel)
+        containerStackView.addArrangedSubview(inputContainerView)
+        
+        scrollView.addSubview(containerStackView)
         self.view.addSubview(scrollView)
 
         scrollView.snp.makeConstraints { make in
@@ -101,11 +139,53 @@ final class OTPLoginViewController: UIViewController {
             make.trailing.equalTo(self.view.snp.trailing)
         }
 
-        stackView.snp.makeConstraints { make in
-            make.top.equalTo(scrollView.snp.top).offset(400)
+        containerStackView.snp.makeConstraints { make in
+            make.top.equalTo(scrollView.snp.top)
             make.bottom.equalTo(scrollView.snp.bottom)
             make.width.equalTo(self.view.snp.width).offset(-100)
             make.centerX.equalTo(self.view.snp.centerX)
         }
     }
+
+    private func applyStyle() {
+        
+        self.view.backgroundColor = Theme.darkerBackgroundColor
+        
+        titleLabel.textColor = Theme.primaryTextColor
+        titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
+        
+        inputTextField.keyboardType = .numberPad
+        inputTextField.isSecureTextEntry = true
+        inputTextField.keyboardAppearance = .dark
+        
+        inputTextField.lineHeight = 3.0
+        inputTextField.selectedLineHeight = 6.0
+        
+        inputTextField.font = UIFont.systemFont(ofSize: 24, weight: .medium)
+        
+        inputTextField.tintColor = Theme.tintColor
+        inputTextField.textColor = Theme.secondaryTextColor
+        inputTextField.lineColor = Theme.secondaryTextColor
+        inputTextField.selectedTitleColor = Theme.tintColor
+        inputTextField.selectedLineColor = Theme.tintColor
+        inputTextField.errorColor = Theme.errorColor
+    }
 }
+
+extension OTPLoginViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField,
+                   shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String
+    ) -> Bool {
+        guard let textFieldText = textField.text,
+            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
+                return false
+        }
+        let substringToReplace = textFieldText[rangeOfTextToReplace]
+        let count = textFieldText.count - substringToReplace.count + string.count
+        return count <= 4
+    }
+}
+
+

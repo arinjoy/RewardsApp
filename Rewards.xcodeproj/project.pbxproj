@@ -16,6 +16,8 @@
 		0E11922F2362E28A00252658 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E11922D2362E28A00252658 /* Lottie.framework */; };
 		0E1192332362FD7F00252658 /* TapDismissManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192322362FD7F00252658 /* TapDismissManager.swift */; };
 		0E1192352362FDB000252658 /* KeyboardTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192342362FDB000252658 /* KeyboardTracker.swift */; };
+		0E11923723630A7B00252658 /* Theme+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923623630A7B00252658 /* Theme+Icon.swift */; };
+		0E11923923631B3A00252658 /* Theme+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923823631B3A00252658 /* Theme+Color.swift */; };
 		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
 		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
 		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
@@ -79,6 +81,8 @@
 		0E11922D2362E28A00252658 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 		0E1192322362FD7F00252658 /* TapDismissManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapDismissManager.swift; sourceTree = "<group>"; };
 		0E1192342362FDB000252658 /* KeyboardTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTracker.swift; sourceTree = "<group>"; };
+		0E11923623630A7B00252658 /* Theme+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Icon.swift"; sourceTree = "<group>"; };
+		0E11923823631B3A00252658 /* Theme+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Color.swift"; sourceTree = "<group>"; };
 		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
 		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
@@ -177,6 +181,8 @@
 		0E1192302362FD3A00252658 /* PresenentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0E11923823631B3A00252658 /* Theme+Color.swift */,
+				0E11923623630A7B00252658 /* Theme+Icon.swift */,
 				0E1192312362FD6D00252658 /* Utils */,
 				0E119221236250F400252658 /* Localization */,
 				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
@@ -534,6 +540,7 @@
 				0E11922023624F5700252658 /* OTPLoginDisplay.swift in Sources */,
 				0E27179B2361CF9200883177 /* HTTPClient.swift in Sources */,
 				0E27176D236079CA00883177 /* LoginToken.swift in Sources */,
+				0E11923723630A7B00252658 /* Theme+Icon.swift in Sources */,
 				0E27177E2361B27000883177 /* APIError.swift in Sources */,
 				0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */,
 				0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */,
@@ -544,6 +551,7 @@
 				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
 				0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */,
 				0E1192332362FD7F00252658 /* TapDismissManager.swift in Sources */,
+				0E11923923631B3A00252658 /* Theme+Color.swift in Sources */,
 				0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
