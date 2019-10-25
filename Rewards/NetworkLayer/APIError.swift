@@ -20,4 +20,6 @@ public enum APIError: Error {
     case seviceUnavailable
     case server
     case noDataError
+    
+    case unknown
 }
