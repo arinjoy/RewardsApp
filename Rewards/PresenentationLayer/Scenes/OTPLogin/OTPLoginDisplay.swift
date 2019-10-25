@@ -13,14 +13,14 @@ protocol OTPLoginDisplay: class {
     /// - Parameter title: The title to set
     func setTitle(_ title: String)
     
-    /// Will set the code input field placeholder
+    /// Will set the code input field placeholder & top title while editing
     ///
-    /// - Parameter title: The placeholder to set
-    func setCodeInputPlaceHolder(_ placeholder: String)
+    /// - Parameter placeholder: The placeholder to set
+    /// - Parameter title: The title to set on top of it while editing
+    func setCodeInputPlaceholder(_ placeholder: String, andTitle title: String)
     
     /// Will show inline error message to input field
     ///
-    /// - Parameter message: The message to show
-    func showCodeInputError(message: String)
-
+    /// - Parameter message: The message to show. `nil` value would hide the error
+    func showCodeInputError(message: String?)
 }

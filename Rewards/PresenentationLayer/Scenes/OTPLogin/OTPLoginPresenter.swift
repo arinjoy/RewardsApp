@@ -6,13 +6,10 @@
 //  Copyright © 2019 Arinjoy Biswas. All rights reserved.
 //
 
-import RxSwift
-
 protocol OTPLoginPresenting: class {
     
     /// Called when view did become ready
     func viewDidBecomeReady()
-
 }
 
 final class OTPLoginPresenter: OTPLoginPresenting {
@@ -20,12 +17,14 @@ final class OTPLoginPresenter: OTPLoginPresenting {
     /// The front-facing view that conforms to the `OTPLoginDisplay` protocol
     weak var display: OTPLoginDisplay?
     
-    /// The identity service for login
-    private let service = IdentityServiceClient(dataSource: HTTPClient())
+    // MARK: - Private Properties
     
-    /// The RxSwift disposing swift
-    private let disposeBag = DisposeBag()
+    /// The interactor for login
+    private let interactor: LoginInteracting
     
+    init(interactor: LoginInteracting) {
+        self.interactor = interactor
+    }
     
     /// MARK: - OTPLoginPresenting
     
@@ -33,8 +32,21 @@ final class OTPLoginPresenter: OTPLoginPresenting {
         
         display?.setTitle(StringKeys.RewardsApp.otpLoginViewTitle.localized())
         
-        display?.setCodeInputPlaceHolder(
-            StringKeys.RewardsApp.otpLoginInputPlaceholder.localized()
+        display?.setCodeInputPlaceholder(
+            StringKeys.RewardsApp.otpLoginInputPlaceholder.localized(),
+            andTitle: StringKeys.RewardsApp.otpLoginInputTitle.localized()
         )
+        
+        /*
+        interactor.doLogin(withOTP: "1234") { result in
+            switch result {
+            case .success(let suc):
+                print(suc)
+            case .failure(let err):
+                print(err)
+            }
+        }
+       */
+        
     }
 }

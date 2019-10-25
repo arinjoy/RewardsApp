@@ -15,6 +15,7 @@ extension StringKeys {
         case otpLoginViewTitle = "otpLogin.view.title"
         
         case otpLoginInputPlaceholder = "otpLogin.input.placeholder"
+        case otpLoginInputTitle = "otpLogin.input.title"
 
         
         // MARK: - LocalizationKeys

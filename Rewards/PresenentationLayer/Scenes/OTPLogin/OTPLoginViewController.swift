@@ -11,9 +11,9 @@ import RxSwift
 import SkyFloatingLabelTextField
 import SnapKit
 
-final class OTPLoginViewController: UIViewController {
+final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
     
-    // MARK: - UI Elements
+    // MARK: - View Properties
     
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
@@ -37,17 +37,25 @@ final class OTPLoginViewController: UIViewController {
         return button
     }()
     
-    
     // MARK: - Private Properties
 
-    private let disposeBag = DisposeBag()
+    /// The presenter conforming to the `WeatherListPresenting`
+    private lazy var presenter: OTPLoginPresenting = {
+        let presenter = OTPLoginPresenter(interactor:
+            LoginInteractor(
+                identityService: IdentityServiceClient(dataSource: HTTPClient())
+            )
+        )
+        presenter.display = self
+        return presenter
+    }()
     
     /// Keyboard tracking helper
     private let keyboardTracker: KeyboardTracker = KeyboardTracker()
     
     /// Manager to manage tap out to dismiss keyboard feature
     private let tapDismissManager: TapDismissManager = TapDismissManager()
-
+    
     
     // MARK: - Lifecycle
     
@@ -59,13 +67,9 @@ final class OTPLoginViewController: UIViewController {
         
         keyboardTracker.setScrollView(scrollView)
         tapDismissManager.configure(withTargetView: self.view)
-        
         inputTextField.delegate = self
         
-        titleLabel.text = "Please enter your OTP"
-        inputTextField.placeholder = "OTP Code"
-        inputTextField.title = "4 digit code"
- 
+        presenter.viewDidBecomeReady()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,6 +84,24 @@ final class OTPLoginViewController: UIViewController {
         keyboardTracker.removeNotifications()
     }
     
+    
+    // MARK: - OTPLoginDisplay
+    
+    func setTitle(_ title: String) {
+        titleLabel.text = title
+    }
+    
+    func setCodeInputPlaceholder(_ placeholder: String, andTitle title: String) {
+        inputTextField.placeholder = placeholder
+        inputTextField.title = title
+    }
+    
+    func showCodeInputError(message: String?) {
+        inputTextField.errorMessage = message
+    }
+    
+    
+    // MARK: - Private Helpers
     
     private func configureUILayout() {
         

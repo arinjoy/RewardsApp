@@ -7,4 +7,5 @@
 */
 
 "otpLogin.view.title" = "Please enter your OTP";
-"otpLogin.input.placeholder" = "4 digit code";
+"otpLogin.input.placeholder" = "Enter OTP";
+"otpLogin.input.title" = "4 DIGIT CODE";
