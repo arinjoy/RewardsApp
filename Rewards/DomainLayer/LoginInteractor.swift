@@ -52,16 +52,6 @@ final class LoginInteractor: LoginInteracting {
         completion: @escaping ((Result<LoginState, APIError>) -> Void)
     ) {
         
-//                sss.otpLogin(withPin: "1234")
-//                .observeOn(MainScheduler.instance)
-//                    .subscribe(onSuccess: { token in
-//                        print(token)
-//                    }, onError: { error in
-//                        print(error)
-//                    })
-//                .disposed(by: disposeBag)
-        
-        
         identityService.otpLogin(withPin: code)
             .observeOn(MainScheduler.instance)
             .subscribe(onSuccess: { token in

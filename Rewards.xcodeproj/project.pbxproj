@@ -19,6 +19,8 @@
 		0E11923723630A7B00252658 /* Theme+Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923623630A7B00252658 /* Theme+Icon.swift */; };
 		0E11923923631B3A00252658 /* Theme+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923823631B3A00252658 /* Theme+Color.swift */; };
 		0E11923C236383B600252658 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923B236383B600252658 /* LoginInteractor.swift */; };
+		0E1192402363A2E300252658 /* IdentityService+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923F2363A2E300252658 /* IdentityService+TestDoubles.swift */; };
+		0E1192432363A61E00252658 /* LoginInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192422363A61E00252658 /* LoginInteractorSpec.swift */; };
 		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
 		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
 		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
@@ -85,6 +87,8 @@
 		0E11923623630A7B00252658 /* Theme+Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Icon.swift"; sourceTree = "<group>"; };
 		0E11923823631B3A00252658 /* Theme+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme+Color.swift"; sourceTree = "<group>"; };
 		0E11923B236383B600252658 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		0E11923F2363A2E300252658 /* IdentityService+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentityService+TestDoubles.swift"; sourceTree = "<group>"; };
+		0E1192422363A61E00252658 /* LoginInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpec.swift; sourceTree = "<group>"; };
 		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
 		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
@@ -210,6 +214,23 @@
 			path = DomainLayer;
 			sourceTree = "<group>";
 		};
+		0E11923D2363A18100252658 /* DomainLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E11923E2363A1E400252658 /* Mocks */,
+				0E1192422363A61E00252658 /* LoginInteractorSpec.swift */,
+			);
+			path = DomainLayerTests;
+			sourceTree = "<group>";
+		};
+		0E11923E2363A1E400252658 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0E11923F2363A2E300252658 /* IdentityService+TestDoubles.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		0E27176B2360796600883177 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,19 +283,20 @@
 		0E2717882361C11800883177 /* RewardsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E2717A12361DE4B00883177 /* NetworkLayer */,
+				0E11923D2363A18100252658 /* DomainLayerTests */,
+				0E2717A12361DE4B00883177 /* NetworkLayerTests */,
 				0E27178B2361C11800883177 /* Info.plist */,
 			);
 			path = RewardsTests;
 			sourceTree = "<group>";
 		};
-		0E2717A12361DE4B00883177 /* NetworkLayer */ = {
+		0E2717A12361DE4B00883177 /* NetworkLayerTests */ = {
 			isa = PBXGroup;
 			children = (
 				0E3312A5236239F600FF89B5 /* Mocks */,
-				0E3312A823623B6900FF89B5 /* Identity */,
+				0E3312A823623B6900FF89B5 /* IdentityService */,
 			);
-			path = NetworkLayer;
+			path = NetworkLayerTests;
 			sourceTree = "<group>";
 		};
 		0E3312A5236239F600FF89B5 /* Mocks */ = {
@@ -285,13 +307,13 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		0E3312A823623B6900FF89B5 /* Identity */ = {
+		0E3312A823623B6900FF89B5 /* IdentityService */ = {
 			isa = PBXGroup;
 			children = (
 				0E2717892361C11800883177 /* OTPLoginRequestSpec.swift */,
 				0E3312A12362380C00FF89B5 /* IdentityServiceSpec.swift */,
 			);
-			path = Identity;
+			path = IdentityService;
 			sourceTree = "<group>";
 		};
 		0E4A6E4923606EEE003C6399 = {
@@ -535,6 +557,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E1192432363A61E00252658 /* LoginInteractorSpec.swift in Sources */,
+				0E1192402363A2E300252658 /* IdentityService+TestDoubles.swift in Sources */,
 				0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */,
 				0E3312A723623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift in Sources */,
 				0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */,
