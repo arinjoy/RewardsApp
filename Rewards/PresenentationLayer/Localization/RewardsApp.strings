@@ -1,0 +1,10 @@
+/* 
+  RewardsApp.strings
+  Rewards
+
+  Created by Arinjoy Biswas on 25/10/19.
+  Copyright © 2019 Arinjoy Biswas. All rights reserved.
+*/
+
+"otpLogin.view.title" = "Please enter your OTP";
+"otpLogin.input.placeholder" = "4 digit code";

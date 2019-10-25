@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E11922023624F5700252658 /* OTPLoginDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11921F23624F5700252658 /* OTPLoginDisplay.swift */; };
+		0E1192232362511100252658 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192222362511100252658 /* LocalizationKeys.swift */; };
+		0E1192252362513600252658 /* RewardsApp+StringKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192242362513600252658 /* RewardsApp+StringKeys.swift */; };
+		0E1192272362519C00252658 /* RewardsApp.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0E1192262362519C00252658 /* RewardsApp.strings */; };
+		0E11922B236252A600252658 /* OTPLoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11922A236252A600252658 /* OTPLoginPresenter.swift */; };
+		0E11922E2362E28A00252658 /* SkyFloatingLabelTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E11922C2362E28A00252658 /* SkyFloatingLabelTextField.framework */; };
+		0E11922F2362E28A00252658 /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E11922D2362E28A00252658 /* Lottie.framework */; };
+		0E1192332362FD7F00252658 /* TapDismissManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192322362FD7F00252658 /* TapDismissManager.swift */; };
+		0E1192352362FDB000252658 /* KeyboardTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192342362FDB000252658 /* KeyboardTracker.swift */; };
 		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
 		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
 		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
@@ -30,7 +39,7 @@
 		0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3312A12362380C00FF89B5 /* IdentityServiceSpec.swift */; };
 		0E3312A723623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3312A623623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift */; };
 		0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5523606EEE003C6399 /* AppDelegate.swift */; };
-		0E4A6E5823606EEE003C6399 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5723606EEE003C6399 /* ViewController.swift */; };
+		0E4A6E5823606EEE003C6399 /* OTPLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5723606EEE003C6399 /* OTPLoginViewController.swift */; };
 		0E4A6E5B23606EEE003C6399 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5923606EEE003C6399 /* Main.storyboard */; };
 		0E4A6E5D23606EF0003C6399 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5C23606EF0003C6399 /* Assets.xcassets */; };
 		0E4A6E6023606EF0003C6399 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E4A6E5E23606EF0003C6399 /* LaunchScreen.storyboard */; };
@@ -61,6 +70,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E11921F23624F5700252658 /* OTPLoginDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginDisplay.swift; sourceTree = "<group>"; };
+		0E1192222362511100252658 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
+		0E1192242362513600252658 /* RewardsApp+StringKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewardsApp+StringKeys.swift"; sourceTree = "<group>"; };
+		0E1192262362519C00252658 /* RewardsApp.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = RewardsApp.strings; sourceTree = "<group>"; };
+		0E11922A236252A600252658 /* OTPLoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginPresenter.swift; sourceTree = "<group>"; };
+		0E11922C2362E28A00252658 /* SkyFloatingLabelTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SkyFloatingLabelTextField.framework; path = Carthage/Build/iOS/SkyFloatingLabelTextField.framework; sourceTree = "<group>"; };
+		0E11922D2362E28A00252658 /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
+		0E1192322362FD7F00252658 /* TapDismissManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapDismissManager.swift; sourceTree = "<group>"; };
+		0E1192342362FDB000252658 /* KeyboardTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardTracker.swift; sourceTree = "<group>"; };
 		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
 		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
@@ -79,7 +97,7 @@
 		0E3312A623623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableDataSource+TestDoubles.swift"; sourceTree = "<group>"; };
 		0E4A6E5223606EEE003C6399 /* Rewards.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rewards.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4A6E5523606EEE003C6399 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E4A6E5723606EEE003C6399 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0E4A6E5723606EEE003C6399 /* OTPLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginViewController.swift; sourceTree = "<group>"; };
 		0E4A6E5A23606EEE003C6399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E4A6E5C23606EF0003C6399 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E4A6E5F23606EF0003C6399 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -111,6 +129,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E11922E2362E28A00252658 /* SkyFloatingLabelTextField.framework in Frameworks */,
+				0E11922F2362E28A00252658 /* Lottie.framework in Frameworks */,
 				0E2717812361C0D000883177 /* Nimble.framework in Frameworks */,
 				0E2717822361C0D000883177 /* Quick.framework in Frameworks */,
 				0E2717792361987000883177 /* RxSwift.framework in Frameworks */,
@@ -134,28 +154,68 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0E11921E23624F4000252658 /* OTPLogin */ = {
+			isa = PBXGroup;
+			children = (
+				0E4A6E5723606EEE003C6399 /* OTPLoginViewController.swift */,
+				0E11921F23624F5700252658 /* OTPLoginDisplay.swift */,
+				0E11922A236252A600252658 /* OTPLoginPresenter.swift */,
+			);
+			path = OTPLogin;
+			sourceTree = "<group>";
+		};
+		0E119221236250F400252658 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				0E1192222362511100252658 /* LocalizationKeys.swift */,
+				0E1192242362513600252658 /* RewardsApp+StringKeys.swift */,
+				0E1192262362519C00252658 /* RewardsApp.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		0E1192302362FD3A00252658 /* PresenentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				0E1192312362FD6D00252658 /* Utils */,
+				0E119221236250F400252658 /* Localization */,
+				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
+				0E27177C2361AC0100883177 /* Scenes */,
+			);
+			path = PresenentationLayer;
+			sourceTree = "<group>";
+		};
+		0E1192312362FD6D00252658 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0E1192322362FD7F00252658 /* TapDismissManager.swift */,
+				0E1192342362FDB000252658 /* KeyboardTracker.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		0E27176B2360796600883177 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0E2717722361938A00883177 /* BaseRequest.swift */,
 				0E27176C236079CA00883177 /* LoginToken.swift */,
 				0E27176E23607A5000883177 /* OTPLoginInput.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		0E2717702361934000883177 /* DataLayer */ = {
+		0E2717702361934000883177 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0E27176B2360796600883177 /* Models */,
+				0E27177D2361B27000883177 /* APIError.swift */,
+				0E27179A2361CF9200883177 /* HTTPClient.swift */,
 				0E2717692360791600883177 /* EndpointConfiguration.swift */,
+				0E2717982361CEDD00883177 /* ObservableDataSource.swift */,
+				0E27176B2360796600883177 /* Models */,
 				0E271776236194B300883177 /* Requests */,
 				0E2717712361934D00883177 /* IdentityService */,
-				0E2717722361938A00883177 /* BaseRequest.swift */,
-				0E27177D2361B27000883177 /* APIError.swift */,
-				0E2717982361CEDD00883177 /* ObservableDataSource.swift */,
-				0E27179A2361CF9200883177 /* HTTPClient.swift */,
 			);
-			path = DataLayer;
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		0E2717712361934D00883177 /* IdentityService */ = {
@@ -177,7 +237,8 @@
 		0E27177C2361AC0100883177 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0E4A6E5723606EEE003C6399 /* ViewController.swift */,
+				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
+				0E11921E23624F4000252658 /* OTPLogin */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -185,19 +246,19 @@
 		0E2717882361C11800883177 /* RewardsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E2717A12361DE4B00883177 /* DataLayer */,
+				0E2717A12361DE4B00883177 /* NetworkLayer */,
 				0E27178B2361C11800883177 /* Info.plist */,
 			);
 			path = RewardsTests;
 			sourceTree = "<group>";
 		};
-		0E2717A12361DE4B00883177 /* DataLayer */ = {
+		0E2717A12361DE4B00883177 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
 				0E3312A5236239F600FF89B5 /* Mocks */,
 				0E3312A823623B6900FF89B5 /* Identity */,
 			);
-			path = DataLayer;
+			path = NetworkLayer;
 			sourceTree = "<group>";
 		};
 		0E3312A5236239F600FF89B5 /* Mocks */ = {
@@ -241,10 +302,8 @@
 		0E4A6E5423606EEE003C6399 /* Rewards */ = {
 			isa = PBXGroup;
 			children = (
-				0E27177C2361AC0100883177 /* Scenes */,
-				0E2717702361934000883177 /* DataLayer */,
-				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
-				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
+				0E1192302362FD3A00252658 /* PresenentationLayer */,
+				0E2717702361934000883177 /* NetworkLayer */,
 				0E4A6E5C23606EF0003C6399 /* Assets.xcassets */,
 				0E4A6E5E23606EF0003C6399 /* LaunchScreen.storyboard */,
 				0E4A6E6123606EF0003C6399 /* Info.plist */,
@@ -264,6 +323,8 @@
 		0E4A6E7523607364003C6399 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0E11922D2362E28A00252658 /* Lottie.framework */,
+				0E11922C2362E28A00252658 /* SkyFloatingLabelTextField.framework */,
 				0E27177F2361C0D000883177 /* Nimble.framework */,
 				0E2717802361C0D000883177 /* Quick.framework */,
 				0E4A6E7723607364003C6399 /* Alamofire.framework */,
@@ -390,6 +451,7 @@
 				0E4A6E6023606EF0003C6399 /* LaunchScreen.storyboard in Resources */,
 				0E4A6E5D23606EF0003C6399 /* Assets.xcassets in Resources */,
 				0E4A6E5B23606EEE003C6399 /* Main.storyboard in Resources */,
+				0E1192272362519C00252658 /* RewardsApp.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +500,8 @@
 				"/$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"/$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
+				"/$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -464,16 +528,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E11922B236252A600252658 /* OTPLoginPresenter.swift in Sources */,
 				0E2717732361938A00883177 /* BaseRequest.swift in Sources */,
-				0E4A6E5823606EEE003C6399 /* ViewController.swift in Sources */,
+				0E4A6E5823606EEE003C6399 /* OTPLoginViewController.swift in Sources */,
+				0E11922023624F5700252658 /* OTPLoginDisplay.swift in Sources */,
 				0E27179B2361CF9200883177 /* HTTPClient.swift in Sources */,
 				0E27176D236079CA00883177 /* LoginToken.swift in Sources */,
 				0E27177E2361B27000883177 /* APIError.swift in Sources */,
 				0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */,
 				0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */,
 				0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */,
+				0E1192352362FDB000252658 /* KeyboardTracker.swift in Sources */,
+				0E1192252362513600252658 /* RewardsApp+StringKeys.swift in Sources */,
+				0E1192232362511100252658 /* LocalizationKeys.swift in Sources */,
 				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
 				0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */,
+				0E1192332362FD7F00252658 /* TapDismissManager.swift in Sources */,
 				0E4A6E5623606EEE003C6399 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
