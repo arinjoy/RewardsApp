@@ -63,6 +63,8 @@
 		0E4A6E82236076D9003C6399 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
 		0E4A6E83236076D9003C6399 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
 		0E4A6E84236076D9003C6399 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
+		0ECEABCE236481CD000D8D96 /* RewardPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECEABCD236481CD000D8D96 /* RewardPresenter+TestDoubles.swift */; };
+		0ECEABD023648305000D8D96 /* RewardPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECEABCF23648305000D8D96 /* RewardPresenterSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +137,8 @@
 		0E4A6E7723607364003C6399 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		0E4A6E7823607364003C6399 /* SnapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SnapKit.framework; path = Carthage/Build/iOS/SnapKit.framework; sourceTree = "<group>"; };
 		0E4A6E7923607364003C6399 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
+		0ECEABCD236481CD000D8D96 /* RewardPresenter+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewardPresenter+TestDoubles.swift"; sourceTree = "<group>"; };
+		0ECEABCF23648305000D8D96 /* RewardPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPresenterSpec.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,8 +208,7 @@
 		0E1192302362FD3A00252658 /* PresenentationLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0E11923823631B3A00252658 /* Theme+Color.swift */,
-				0E11923623630A7B00252658 /* Theme+Icon.swift */,
+				0ECEABD123650647000D8D96 /* Theme */,
 				0E1192312362FD6D00252658 /* Utils */,
 				0E119221236250F400252658 /* Localization */,
 				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
@@ -261,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				0E1192462363CD4500252658 /* OTPLogin */,
+				0ECEABCC2364817B000D8D96 /* Reward */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -268,18 +272,10 @@
 		0E1192462363CD4500252658 /* OTPLogin */ = {
 			isa = PBXGroup;
 			children = (
-				0E1192492363D5C700252658 /* Mocks */,
+				0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */,
 				0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */,
 			);
 			path = OTPLogin;
-			sourceTree = "<group>";
-		};
-		0E1192492363D5C700252658 /* Mocks */ = {
-			isa = PBXGroup;
-			children = (
-				0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */,
-			);
-			path = Mocks;
 			sourceTree = "<group>";
 		};
 		0E11924E236441A600252658 /* Reward */ = {
@@ -382,8 +378,8 @@
 			isa = PBXGroup;
 			children = (
 				0E4A6E5423606EEE003C6399 /* Rewards */,
-				0E4A6E6923606EF0003C6399 /* RewardsUITests */,
 				0E2717882361C11800883177 /* RewardsTests */,
+				0E4A6E6923606EF0003C6399 /* RewardsUITests */,
 				0E4A6E5323606EEE003C6399 /* Products */,
 				0E4A6E7523607364003C6399 /* Frameworks */,
 			);
@@ -436,6 +432,24 @@
 				0E4A6E7823607364003C6399 /* SnapKit.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0ECEABCC2364817B000D8D96 /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				0ECEABCD236481CD000D8D96 /* RewardPresenter+TestDoubles.swift */,
+				0ECEABCF23648305000D8D96 /* RewardPresenterSpec.swift */,
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
+		0ECEABD123650647000D8D96 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				0E11923823631B3A00252658 /* Theme+Color.swift */,
+				0E11923623630A7B00252658 /* Theme+Icon.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,8 +641,10 @@
 				0E1192402363A2E300252658 /* IdentityService+TestDoubles.swift in Sources */,
 				0E1192482363CD6B00252658 /* OTPLoginPresenterSpec.swift in Sources */,
 				0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */,
+				0ECEABD023648305000D8D96 /* RewardPresenterSpec.swift in Sources */,
 				0E11924B2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift in Sources */,
 				0E3312A723623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift in Sources */,
+				0ECEABCE236481CD000D8D96 /* RewardPresenter+TestDoubles.swift in Sources */,
 				0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

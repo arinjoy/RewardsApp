@@ -74,7 +74,6 @@ final class OTPLoginViewController: UIViewController {
         
         configureUILayout()
         applyStyle()
-        animatedBackgroundView.play()
         
         keyboardTracker.setScrollView(scrollView)
         tapDismissManager.configure(withTargetView: self.view)
@@ -97,6 +96,8 @@ final class OTPLoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         keyboardTracker.registerForNotifications()
+        
+        animatedBackgroundView.play()
         
         self.navigationController?.setNavigationBarHidden(true, animated: false)
     }

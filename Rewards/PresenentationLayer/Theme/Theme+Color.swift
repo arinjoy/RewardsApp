@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  Theme+Color.swift
 //  Rewards
 //
 //  Created by Arinjoy Biswas on 25/10/19.
