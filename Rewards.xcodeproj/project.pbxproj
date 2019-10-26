@@ -21,6 +21,8 @@
 		0E11923C236383B600252658 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923B236383B600252658 /* LoginInteractor.swift */; };
 		0E1192402363A2E300252658 /* IdentityService+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11923F2363A2E300252658 /* IdentityService+TestDoubles.swift */; };
 		0E1192432363A61E00252658 /* LoginInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192422363A61E00252658 /* LoginInteractorSpec.swift */; };
+		0E1192482363CD6B00252658 /* OTPLoginPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */; };
+		0E11924B2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */; };
 		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
 		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
 		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
@@ -89,6 +91,8 @@
 		0E11923B236383B600252658 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		0E11923F2363A2E300252658 /* IdentityService+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IdentityService+TestDoubles.swift"; sourceTree = "<group>"; };
 		0E1192422363A61E00252658 /* LoginInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpec.swift; sourceTree = "<group>"; };
+		0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginPresenterSpec.swift; sourceTree = "<group>"; };
+		0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPLoginPresenter+TestDoubles.swift"; sourceTree = "<group>"; };
 		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
 		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
@@ -231,6 +235,39 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		0E1192442363CD2500252658 /* PresenentationLayerTests */ = {
+			isa = PBXGroup;
+			children = (
+				0E1192452363CD3700252658 /* Scenes */,
+			);
+			path = PresenentationLayerTests;
+			sourceTree = "<group>";
+		};
+		0E1192452363CD3700252658 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				0E1192462363CD4500252658 /* OTPLogin */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		0E1192462363CD4500252658 /* OTPLogin */ = {
+			isa = PBXGroup;
+			children = (
+				0E1192492363D5C700252658 /* Mocks */,
+				0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */,
+			);
+			path = OTPLogin;
+			sourceTree = "<group>";
+		};
+		0E1192492363D5C700252658 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		0E27176B2360796600883177 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -283,6 +320,7 @@
 		0E2717882361C11800883177 /* RewardsTests */ = {
 			isa = PBXGroup;
 			children = (
+				0E1192442363CD2500252658 /* PresenentationLayerTests */,
 				0E11923D2363A18100252658 /* DomainLayerTests */,
 				0E2717A12361DE4B00883177 /* NetworkLayerTests */,
 				0E27178B2361C11800883177 /* Info.plist */,
@@ -559,7 +597,9 @@
 			files = (
 				0E1192432363A61E00252658 /* LoginInteractorSpec.swift in Sources */,
 				0E1192402363A2E300252658 /* IdentityService+TestDoubles.swift in Sources */,
+				0E1192482363CD6B00252658 /* OTPLoginPresenterSpec.swift in Sources */,
 				0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */,
+				0E11924B2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift in Sources */,
 				0E3312A723623A1700FF89B5 /* ObservableDataSource+TestDoubles.swift in Sources */,
 				0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */,
 			);
