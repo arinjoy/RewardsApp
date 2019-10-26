@@ -82,10 +82,10 @@ final class OTPLoginPresenter: OTPLoginPresenting {
                     self?.display?.showProcessingIndicatorSuccess()
                     self?.display?.hideProcessingIndicator(afterDelay: 1.0)
                     
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.3) {
                         self?.router?.routeToRewardScene()
-                    })
-                
+                    }
+        
                 case .loginFailed:
                     
                     self?.display?.showProcessingIndicatorFailure()

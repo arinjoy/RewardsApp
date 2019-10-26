@@ -156,4 +156,15 @@ final class LoginInteractorMock: LoginInteracting {
     }
 }
 
+// MARK: - Router Spy
+
+final class OTPLoginRouterSpy: OTPLoginRouting {
+    
+    var routeToRewardSceneCalled: Bool = false
+    
+    func routeToRewardScene() {
+        routeToRewardSceneCalled = true
+    }
+}
+
 

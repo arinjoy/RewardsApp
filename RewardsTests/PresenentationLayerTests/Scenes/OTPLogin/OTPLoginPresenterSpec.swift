@@ -59,16 +59,19 @@ final class OTPLoginPresenterSpec: QuickSpec {
                 }
             }
             
-            context("communication with display on interactor behaviours") {
+            context("communication with display & router on interactor behaviours") {
                 
                 var interactorMock: LoginInteractorMock!
                 var displaySpy: OTPLoginDisplaySpy!
+                
+                beforeEach {
+                    displaySpy = OTPLoginDisplaySpy()
+                }
                 
                 it("should show the processing indicator when OTP submission was made") {
                     
                     interactorMock = LoginInteractorMock()
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
                     
                     // when
@@ -84,7 +87,6 @@ final class OTPLoginPresenterSpec: QuickSpec {
                     interactorMock = LoginInteractorMock(result: .loginFailed)
                     
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
                     
                     // when
@@ -97,14 +99,18 @@ final class OTPLoginPresenterSpec: QuickSpec {
                         .toEventually(beTrue())
                 }
                 
-                it("should show success indicator when interactor login succeeded") {
+                it("should show success indicator & route to reward scene when interactor login succeeded") {
+
+                    var routerSpy: OTPLoginRouterSpy!
                     
                     interactorMock = LoginInteractorMock(
                         result: .loggedIn)
                     
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
+                    
+                    routerSpy = OTPLoginRouterSpy()
+                    presenter.router = routerSpy
                     
                     // when
                     presenter.didSubmitLogin(withCode: "2222")
@@ -114,16 +120,24 @@ final class OTPLoginPresenterSpec: QuickSpec {
                         .toEventually(beTrue())
                     expect(displaySpy.showProcessingIndicatorSuccessCalled)
                         .toEventually(beTrue())
+                    
+                    // routing to rewards scene occurs
+                    expect(routerSpy.routeToRewardSceneCalled)
+                        .toEventually(beTrue(), timeout: 1.5)
                 }
                 
                 it("should show general error message when interactor login came back general server error") {
+                    
+                    var routerSpy: OTPLoginRouterSpy!
                     
                     interactorMock = LoginInteractorMock(resultingError: true,
                                                          error: APIError.server)
                     
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
+                    
+                    routerSpy = OTPLoginRouterSpy()
+                    presenter.router = routerSpy
                     
                     // when
                     presenter.didSubmitLogin(withCode: "2222")
@@ -133,6 +147,10 @@ final class OTPLoginPresenterSpec: QuickSpec {
                         .toEventually(beTrue())
                     expect(displaySpy.errorMessage)
                         .toEventually(equal("Oops.\n\nSomething went wrong!"))
+                    
+                    // routing to rewards scene should not occur
+                    expect(routerSpy.routeToRewardSceneCalled)
+                        .toEventually(beFalse())
                 }
                 
                 it("should show network connection error message when interactor login came back with `networkFailure`") {
@@ -141,7 +159,6 @@ final class OTPLoginPresenterSpec: QuickSpec {
                                                          error: APIError.networkFailure)
                     
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
                     
                     // when
@@ -209,14 +226,13 @@ final class OTPLoginPresenterSpec: QuickSpec {
                 var displaySpy: OTPLoginDisplaySpy!
                 
                 beforeEach {
-
+                    displaySpy = OTPLoginDisplaySpy()
                 }
                 
                 it("should show invalid code inline error when login failed") {
                     
                     interactorMock = LoginInteractorMock(result: LoginState.loginFailed)
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
                     
                     // when
@@ -231,7 +247,6 @@ final class OTPLoginPresenterSpec: QuickSpec {
                     
                     interactorMock = LoginInteractorMock(result: LoginState.loggedIn)
                     presenter = OTPLoginPresenter(interactor: interactorMock)
-                    displaySpy = OTPLoginDisplaySpy()
                     presenter.display = displaySpy
                     
                     // when

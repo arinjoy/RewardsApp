@@ -14,11 +14,20 @@ final class RewardViewController: UIViewController, RewardDisplay {
 
     // MARK: - View Properties
     
+    /// Main Reward view - Deer, or something else as as your Reward
     private let animationRewardView: AnimationView = {
         let animationView = AnimationView()
+        animationView.animationSpeed = 0.8
+        animationView.loopMode = LottieLoopMode.loop
+        return animationView
+    }()
+    
+    /// Decorative background view
+    private let animatedBackgroundView: AnimationView = {
+        let animationView = AnimationView(name: "let-it-snow")
         animationView.animationSpeed = 1.0
         animationView.loopMode = LottieLoopMode.loop
-        animationView.contentMode = .scaleAspectFit
+        animationView.play()
         return animationView
     }()
     
@@ -36,10 +45,14 @@ final class RewardViewController: UIViewController, RewardDisplay {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        configureLayout()
+        self.navigationController?.navigationBar.prefersLargeTitles = true
+        self.view.backgroundColor = Theme.darkerBackgroundColor
         
+        configureLayout()
+
         presenter.viewDidBecomeReady()
+        
+        animationRewardView.play()
     }
     
     // MARK: - RewardDisplay
@@ -56,11 +69,15 @@ final class RewardViewController: UIViewController, RewardDisplay {
     
     func configureLayout() {
         
+        self.view.addSubview(animatedBackgroundView)
         self.view.addSubview(animationRewardView)
         
+        animatedBackgroundView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
+        
         animationRewardView.snp.makeConstraints { make in
-            make.width.equalToSuperview()
-            make.centerX.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
         }
     }

@@ -17,7 +17,7 @@ final class KeyboardTracker {
 
     // MARK: - Available features
     
-    var keyboardInsetPadding: CGFloat = 10
+    var keyboardInsetPadding: CGFloat = 20
     
     func setScrollView(_ scrollView: UIScrollView) {
         self.scrollView = scrollView

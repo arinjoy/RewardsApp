@@ -144,7 +144,7 @@ final class OTPLoginViewController: UIViewController {
         let topPadder = UIView(frame: CGRect.zero)
         topPadder.backgroundColor = .clear
         topPadder.snp.makeConstraints { make in
-            make.height.equalTo(100)
+            make.height.equalTo(120)
         }
         
         containerStackView.addArrangedSubview(topPadder)
@@ -176,6 +176,9 @@ final class OTPLoginViewController: UIViewController {
 
     private func applyStyle() {
         self.view.backgroundColor = Theme.darkerBackgroundColor
+        
+        scrollView.showsVerticalScrollIndicator = false
+        scrollView.showsHorizontalScrollIndicator = false
         
         titleLabel.textColor = Theme.primaryTextColor
         titleLabel.font = UIFont.systemFont(ofSize: 28, weight: .bold)
