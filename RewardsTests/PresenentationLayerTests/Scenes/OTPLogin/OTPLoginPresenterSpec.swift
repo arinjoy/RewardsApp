@@ -154,6 +154,93 @@ final class OTPLoginPresenterSpec: QuickSpec {
                         .toEventually(equal("Oops.\n\nPlease check network connection."))
                 }
             }
+            
+            context("OTP code input data entry behaviours") {
+                
+                var interactorMock: LoginInteractorMock!
+                var displaySpy: OTPLoginDisplaySpy!
+                
+                beforeEach {
+                    interactorMock = LoginInteractorMock()
+                    presenter = OTPLoginPresenter(interactor: interactorMock)
+                    displaySpy = OTPLoginDisplaySpy()
+                    presenter.display = displaySpy
+                }
+                
+                it("should clear any existing inline error as field start typing") {
+                    // when
+                    presenter.codeInputDidEnterTyping()
+                    
+                    // then
+                    expect(displaySpy.hideCodeInputErrorCalled) == true
+                }
+                
+                it("should make submit button inactive when input is less than 4 digit") {
+                    // when
+                    presenter.codeInputDidEnterText("11")
+                    
+                    // then
+                    expect(displaySpy.enableSubmitButtonCalled) == true
+                    expect(displaySpy.submitButtonEnabled) == false
+                }
+                
+                it("should make submit button `inactive` when input is empty") {
+                    // when
+                    presenter.codeInputDidEnterText("")
+                    
+                    // then
+                    expect(displaySpy.enableSubmitButtonCalled) == true
+                    expect(displaySpy.submitButtonEnabled) == false
+                }
+                
+                it("should make submit button `active` when input is 4 digit long") {
+                    // when
+                    presenter.codeInputDidEnterText("4444")
+                    
+                    // then
+                    expect(displaySpy.enableSubmitButtonCalled) == true
+                    expect(displaySpy.submitButtonEnabled) == true
+                }
+            }
+            
+            context("OTP code input inline error behaviours") {
+                
+                var interactorMock: LoginInteractorMock!
+                var displaySpy: OTPLoginDisplaySpy!
+                
+                beforeEach {
+
+                }
+                
+                it("should show invalid code inline error when login failed") {
+                    
+                    interactorMock = LoginInteractorMock(result: LoginState.loginFailed)
+                    presenter = OTPLoginPresenter(interactor: interactorMock)
+                    displaySpy = OTPLoginDisplaySpy()
+                    presenter.display = displaySpy
+                    
+                    // when
+                    presenter.didSubmitLogin(withCode: "1122")
+                    
+                    // then
+                    expect(displaySpy.showCodeInputErrorCalled) == true
+                    expect(displaySpy.codeInputErrorMessage) == "INVALID CODE"
+                }
+                
+                it("should NOT show invalid code inline error when login succeeded") {
+                    
+                    interactorMock = LoginInteractorMock(result: LoginState.loggedIn)
+                    presenter = OTPLoginPresenter(interactor: interactorMock)
+                    displaySpy = OTPLoginDisplaySpy()
+                    presenter.display = displaySpy
+                    
+                    // when
+                    presenter.didSubmitLogin(withCode: "1122")
+                    
+                    // then
+                    expect(displaySpy.showCodeInputErrorCalled) == false
+                }
+            }
         }
     }
 }

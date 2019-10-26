@@ -20,6 +20,8 @@ final class OTPLoginDisplayDummy: OTPLoginDisplay {
     func hideProcessingIndicator(afterDelay delay: TimeInterval) {}
     func showErrorMessage(_ message: String) {}
     func showCodeInputError(message: String?) {}
+    func hideCodeInputError() {}
+    func enableSubmitButton(_ enabled: Bool) {}
 }
 
 // MARK: - Display spy
@@ -35,6 +37,8 @@ final class OTPLoginDisplaySpy: OTPLoginDisplay {
     var hideProcessingIndicatorCalled: Bool = false
     var showErrorMessageCalled: Bool = false
     var showCodeInputErrorCalled: Bool = false
+    var hideCodeInputErrorCalled: Bool = false
+    var enableSubmitButtonCalled: Bool = false
     
     // Spied values
     var title: String?
@@ -44,6 +48,7 @@ final class OTPLoginDisplaySpy: OTPLoginDisplay {
     var hideProcessingIndicatorDelay: TimeInterval?
     var errorMessage: String?
     var codeInputErrorMessage: String?
+    var submitButtonEnabled: Bool?
     
     
     func setTitle(_ title: String) {
@@ -83,6 +88,15 @@ final class OTPLoginDisplaySpy: OTPLoginDisplay {
     func showCodeInputError(message: String?) {
         showCodeInputErrorCalled = true
         codeInputErrorMessage = message
+    }
+    
+    func hideCodeInputError() {
+        hideCodeInputErrorCalled = true
+    }
+    
+    func enableSubmitButton(_ enabled: Bool) {
+        enableSubmitButtonCalled = true
+        submitButtonEnabled = enabled
     }
 }
 

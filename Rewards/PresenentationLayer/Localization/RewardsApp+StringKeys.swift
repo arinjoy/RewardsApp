@@ -24,6 +24,7 @@ extension StringKeys {
         
         case otpLoginInputPlaceholder = "otpLogin.input.placeholder"
         case otpLoginInputTitle = "otpLogin.input.title"
+        case otpLoginInputInvalidMessage = "otpLogin.input.error.invalidCode.message"
         
         case otpLoginProgressTitle = "otpLogin.progress.title"
         

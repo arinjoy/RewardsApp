@@ -18,7 +18,7 @@ enum Theme {
     
     static let darkerBackgroundColor = UIColor.colorFrom(red: 226, green: 232, blue: 230) // light tealish gray
     
-    static let primaryTextColor = UIColor.darkText
+    static let primaryTextColor = UIColor.colorFrom(red: 72, green: 82, blue: 86)
     
     static let secondaryTextColor = UIColor.darkGray
     

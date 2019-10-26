@@ -10,7 +10,8 @@ import UIKit
 
 enum Icon: String {
     
-    case loginSubmit = "login-icon"
+    case loginSubmitActive = "login-icon"
+    case loginSubmitInactive = "login-inactive-icon"
     
     var icon: UIImage {
         guard let image = UIImage(named: self.rawValue)

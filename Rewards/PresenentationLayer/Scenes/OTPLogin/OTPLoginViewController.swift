@@ -69,7 +69,10 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         keyboardTracker.setScrollView(scrollView)
         tapDismissManager.configure(withTargetView: self.view)
         inputTextField.delegate = self
+        inputTextField.addTarget(self, action: #selector(inputTextFieldDidChange), for: .editingChanged)
         
+        submitButton.setImage(Icon.loginSubmitInactive.icon, for: .normal)
+        submitButton.isEnabled = false
         submitButton.addTarget(self,
                                action: #selector(submitButtonAction),
                                for: .touchUpInside)
@@ -101,10 +104,6 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         inputTextField.title = title
     }
     
-    func showCodeInputError(message: String?) {
-        inputTextField.errorMessage = message
-    }
-    
     func showProcessingIndicator(withMessage message: String) {
         HUD.show(.labeledProgress(title: nil, subtitle: message))
     }
@@ -127,13 +126,28 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         HUD.hide(afterDelay: delay)
     }
     
+    func showCodeInputError(message: String?) {
+        inputTextField.errorMessage = message
+    }
+    
+    func hideCodeInputError() {
+        inputTextField.errorMessage = nil
+    }
+    
+    func enableSubmitButton(_ enabled: Bool) {
+        let buttonImage = enabled ?
+            Icon.loginSubmitActive.icon : Icon.loginSubmitInactive.icon
+        submitButton.setImage(buttonImage, for: .normal)
+        submitButton.isEnabled = enabled
+    }
+    
+    
     // MARK: - Private Helpers
     
     private func configureUILayout() {
         
         titleLabel.numberOfLines = 0
         
-        submitButton.setImage(Icon.loginSubmit.icon, for: .normal)
         submitButton.contentEdgeInsets = .zero
         
         inputTextField.snp.makeConstraints { make in
@@ -142,8 +156,8 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         }
         
         submitButton.snp.makeConstraints { make in
-            make.width.equalTo(67)
-            make.height.equalTo(50)
+            make.width.equalTo(80)
+            make.height.equalTo(60)
         }
         
         let inputContainerView = UIView()
@@ -196,7 +210,6 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
     }
 
     private func applyStyle() {
-        
         self.view.backgroundColor = Theme.darkerBackgroundColor
         
         titleLabel.textColor = Theme.primaryTextColor
@@ -210,19 +223,20 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         inputTextField.selectedLineHeight = 6.0
         
         inputTextField.font = UIFont.systemFont(ofSize: 24, weight: .medium)
-        
         inputTextField.tintColor = Theme.tintColor
+        
         inputTextField.textColor = Theme.secondaryTextColor
-        inputTextField.lineColor = Theme.secondaryTextColor
+        inputTextField.lineColor = Theme.primaryTextColor
         inputTextField.selectedTitleColor = Theme.tintColor
         inputTextField.selectedLineColor = Theme.tintColor
+        
         inputTextField.errorColor = Theme.errorColor
+        inputTextField.lineErrorColor = Theme.errorColor
+        inputTextField.textErrorColor = Theme.errorColor
     }
     
     @objc private func submitButtonAction() {
-        
         guard let inputCode = inputTextField.text else { return }
-        
         presenter.didSubmitLogin(withCode: inputCode)
     }
 }
@@ -233,13 +247,24 @@ extension OTPLoginViewController: UITextFieldDelegate {
                    shouldChangeCharactersIn range: NSRange,
                    replacementString string: String
     ) -> Bool {
-        guard let textFieldText = textField.text,
+        guard textField == inputTextField,
+            let textFieldText = textField.text,
             let rangeOfTextToReplace = Range(range, in: textFieldText) else {
                 return false
         }
         let substringToReplace = textFieldText[rangeOfTextToReplace]
         let count = textFieldText.count - substringToReplace.count + string.count
         return count <= 4
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        guard textField == inputTextField else { return }
+        presenter.codeInputDidEnterTyping()
+    }
+    
+    @objc private func inputTextFieldDidChange(textField: UITextField) {
+        guard textField == inputTextField else { return }
+        presenter.codeInputDidEnterText(textField.text)
     }
 }
 

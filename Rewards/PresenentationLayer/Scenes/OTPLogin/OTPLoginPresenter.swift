@@ -11,6 +11,12 @@ protocol OTPLoginPresenting: class {
     /// Called when view did become ready
     func viewDidBecomeReady()
     
+    /// Called when code input field did enter typing
+    func codeInputDidEnterTyping()
+    
+    /// Called as the code input field data entry occurs
+    func codeInputDidEnterText(_ text: String?)
+    
     /// Called when login is submitted
     func didSubmitLogin(withCode code: String)
 }
@@ -19,6 +25,9 @@ final class OTPLoginPresenter: OTPLoginPresenting {
     
     /// The front-facing view that conforms to the `OTPLoginDisplay` protocol
     weak var display: OTPLoginDisplay?
+    
+    // Constant
+    let codeInputMaxLength: Int = 4
     
     // MARK: - Private Properties
     
@@ -41,6 +50,19 @@ final class OTPLoginPresenter: OTPLoginPresenting {
         )
     }
     
+    func codeInputDidEnterTyping() {
+        display?.hideCodeInputError()
+    }
+    
+    func codeInputDidEnterText(_ text: String?) {
+        if let trimmedText = text?.trimmingCharacters(in: .whitespacesAndNewlines),
+            trimmedText.count < codeInputMaxLength {
+            display?.enableSubmitButton(false)
+        } else {
+            display?.enableSubmitButton(true)
+        }
+    }
+    
     func didSubmitLogin(withCode code: String) {
         
         display?.showProcessingIndicator(
@@ -51,12 +73,18 @@ final class OTPLoginPresenter: OTPLoginPresenting {
             case .success(let status):
                 switch status {
                 case.loggedIn:
+            
                     self?.display?.showProcessingIndicatorSuccess()
                     self?.display?.hideProcessingIndicator(afterDelay: 1.0)
                 
                 case .loginFailed:
+                    
                     self?.display?.showProcessingIndicatorFailure()
                     self?.display?.hideProcessingIndicator(afterDelay: 1.0)
+                    
+                    self?.display?.showCodeInputError(
+                        message: StringKeys.RewardsApp.otpLoginInputInvalidMessage.localized()
+                    )
                 }
                 
             case .failure(let error):

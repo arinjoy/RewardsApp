@@ -43,4 +43,10 @@ protocol OTPLoginDisplay: class {
     ///
     /// - Parameter message: The message to show. `nil` value would hide the error
     func showCodeInputError(message: String?)
+    
+    /// Called to hide code input inline error
+    func hideCodeInputError()
+    
+    /// Called to enable/diable the submit button
+    func enableSubmitButton(_ enabled: Bool)
 }

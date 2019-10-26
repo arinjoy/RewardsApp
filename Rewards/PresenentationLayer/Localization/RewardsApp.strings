@@ -17,6 +17,7 @@
 "otpLogin.view.title" = "Please enter your OTP";
 "otpLogin.input.placeholder" = "Enter OTP";
 "otpLogin.input.title" = "4 DIGIT CODE";
+"otpLogin.input.error.invalidCode.message" = "INVALID CODE";
 "otpLogin.progress.title" = "Logging you in ...";
 
 
