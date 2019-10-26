@@ -276,9 +276,20 @@ extension OTPLoginViewController: UITextFieldDelegate {
     ) -> Bool {
         guard textField == inputTextField,
             let textFieldText = textField.text,
-            let rangeOfTextToReplace = Range(range, in: textFieldText) else {
-                return false
+            let rangeOfTextToReplace = Range(range, in: textFieldText)
+        else {
+            return false
         }
+        
+        // Do not allow any character input other than numeric
+        // (to prevent pasting something non-acceptable from pasteboard)
+        guard CharacterSet(charactersIn: "0123456789")
+                .isSuperset(of: CharacterSet(charactersIn: string))
+        else {
+            return false
+        }
+        
+        // Code must be 4 digits or less
         let substringToReplace = textFieldText[rangeOfTextToReplace]
         let count = textFieldText.count - substringToReplace.count + string.count
         return count <= 4
