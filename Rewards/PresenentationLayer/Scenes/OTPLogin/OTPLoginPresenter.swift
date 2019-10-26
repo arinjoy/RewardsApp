@@ -10,6 +10,9 @@ protocol OTPLoginPresenting: class {
     
     /// Called when view did become ready
     func viewDidBecomeReady()
+    
+    /// Called when login is submitted
+    func didSubmitLogin(withCode code: String)
 }
 
 final class OTPLoginPresenter: OTPLoginPresenting {
@@ -36,17 +39,38 @@ final class OTPLoginPresenter: OTPLoginPresenting {
             StringKeys.RewardsApp.otpLoginInputPlaceholder.localized(),
             andTitle: StringKeys.RewardsApp.otpLoginInputTitle.localized()
         )
+    }
+    
+    func didSubmitLogin(withCode code: String) {
         
-        /*
-        interactor.doLogin(withOTP: "1234") { result in
+        display?.showProcessingIndicator(
+            withMessage: StringKeys.RewardsApp.otpLoginProgressTitle.localized())
+        
+        interactor.doLogin(withOTP: code) { [weak self] result in
             switch result {
-            case .success(let suc):
-                print(suc)
-            case .failure(let err):
-                print(err)
+            case .success(let status):
+                switch status {
+                case.loggedIn:
+                    self?.display?.showProcessingIndicatorSuccess()
+                    self?.display?.hideProcessingIndicator(afterDelay: 1.0)
+                
+                case .loginFailed:
+                    self?.display?.showProcessingIndicatorFailure()
+                    self?.display?.hideProcessingIndicator(afterDelay: 1.0)
+                }
+                
+            case .failure(let error):
+                switch error {
+                case .networkFailure:
+                    self?.display?.showErrorMessage(
+                        StringKeys.RewardsApp.networkConnectionErrorMessage.localized())
+                default:
+                    // TODO: More custom error detection and handling can be done here
+                
+                    self?.display?.showErrorMessage(
+                        StringKeys.RewardsApp.generalErrorMessage.localized())
+                }
             }
         }
-       */
-        
     }
 }

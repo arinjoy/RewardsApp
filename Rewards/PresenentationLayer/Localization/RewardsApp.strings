@@ -6,6 +6,18 @@
   Copyright © 2019 Arinjoy Biswas. All rights reserved.
 */
 
+// MARK: - General
+
+"error.general.message" = "Oops.\n\nSomething went wrong!";
+"error.networkConnection.message" = "Oops. \nPlease check your \n network connection.";
+
+
+// MARK: - OTP Login related
+
 "otpLogin.view.title" = "Please enter your OTP";
 "otpLogin.input.placeholder" = "Enter OTP";
 "otpLogin.input.title" = "4 DIGIT CODE";
+"otpLogin.progress.title" = "Logging you in ...";
+
+
+

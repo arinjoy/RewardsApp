@@ -12,11 +12,20 @@ extension StringKeys {
     
     enum RewardsApp: String, LocalizationKeys {
         
+        // MARK: - General
+        
+        case generalErrorMessage = "error.general.message"
+        case networkConnectionErrorMessage = "error.networkConnection.message"
+        
+        
+        // MARK: - OTP Login related
+        
         case otpLoginViewTitle = "otpLogin.view.title"
         
         case otpLoginInputPlaceholder = "otpLogin.input.placeholder"
         case otpLoginInputTitle = "otpLogin.input.title"
-
+        
+        case otpLoginProgressTitle = "otpLogin.progress.title"
         
         // MARK: - LocalizationKeys
         

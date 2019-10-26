@@ -6,6 +6,8 @@
 //  Copyright © 2019 Arinjoy Biswas. All rights reserved.
 //
 
+import Foundation
+
 protocol OTPLoginDisplay: class {
 
     /// Will set the main title within the view
@@ -19,7 +21,25 @@ protocol OTPLoginDisplay: class {
     /// - Parameter title: The title to set on top of it while editing
     func setCodeInputPlaceholder(_ placeholder: String, andTitle title: String)
     
-    /// Will show inline error message to input field
+    /// Will start showing processing spinner with a message
+    ///
+    /// - Parameter message: The message to show while processing
+    func showProcessingIndicator(withMessage message: String)
+    
+    /// Called to show a success mark after processing finished
+    func showProcessingIndicatorSuccess()
+    
+    /// Called to show a error mark after processing finished
+    func showProcessingIndicatorFailure()
+    
+    /// Called to hide the processing spinner after a delay specified
+    /// - Parameter delay: The delay in terms seconds
+    func hideProcessingIndicator(afterDelay delay: TimeInterval)
+    
+    /// Called to show an error message to the main view
+    func showErrorMessage(_ message: String)
+    
+    /// Called to show an inline error message on the input field
     ///
     /// - Parameter message: The message to show. `nil` value would hide the error
     func showCodeInputError(message: String?)

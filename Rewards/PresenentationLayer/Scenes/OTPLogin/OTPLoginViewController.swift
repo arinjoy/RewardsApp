@@ -10,9 +10,10 @@ import UIKit
 import RxSwift
 import SkyFloatingLabelTextField
 import SnapKit
+import PKHUD
 
 final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
-    
+
     // MARK: - View Properties
     
     private let scrollView: UIScrollView = {
@@ -69,6 +70,10 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         tapDismissManager.configure(withTargetView: self.view)
         inputTextField.delegate = self
         
+        submitButton.addTarget(self,
+                               action: #selector(submitButtonAction),
+                               for: .touchUpInside)
+        
         presenter.viewDidBecomeReady()
     }
     
@@ -100,6 +105,27 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         inputTextField.errorMessage = message
     }
     
+    func showProcessingIndicator(withMessage message: String) {
+        HUD.show(.labeledProgress(title: nil, subtitle: message))
+    }
+    
+    func showProcessingIndicatorSuccess() {
+        HUD.show(.success)
+    }
+    
+    func showProcessingIndicatorFailure() {
+        HUD.show(.error)
+    }
+    
+    func showErrorMessage(_ message: String) {
+        HUD.hide(afterDelay: 1.0) { _ in
+            HUD.flash(.label(message), delay: 1.5)
+        }
+    }
+    
+    func hideProcessingIndicator(afterDelay delay: TimeInterval) {
+        HUD.hide(afterDelay: delay)
+    }
     
     // MARK: - Private Helpers
     
@@ -191,6 +217,13 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         inputTextField.selectedTitleColor = Theme.tintColor
         inputTextField.selectedLineColor = Theme.tintColor
         inputTextField.errorColor = Theme.errorColor
+    }
+    
+    @objc private func submitButtonAction() {
+        
+        guard let inputCode = inputTextField.text else { return }
+        
+        presenter.didSubmitLogin(withCode: inputCode)
     }
 }
 
