@@ -11,6 +11,7 @@ import RxSwift
 import SkyFloatingLabelTextField
 import SnapKit
 import PKHUD
+import Lottie
 
 final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
 
@@ -34,8 +35,16 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
     }()
     
     private let submitButton: UIButton = {
-       let button = UIButton(frame: CGRect.zero)
+        let button = UIButton(frame: CGRect.zero)
         return button
+    }()
+    
+    private let animatedBackgroundView: AnimationView = {
+        let animationView = AnimationView(name: "let-it-snow")
+        //animationView.contentMode = .center
+        animationView.animationSpeed = 0.5
+        animationView.loopMode = LottieLoopMode.loop
+        return animationView
     }()
     
     // MARK: - Private Properties
@@ -65,6 +74,7 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         
         configureUILayout()
         applyStyle()
+        animatedBackgroundView.play()
         
         keyboardTracker.setScrollView(scrollView)
         tapDismissManager.configure(withTargetView: self.view)
@@ -190,6 +200,11 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         containerStackView.addArrangedSubview(topPadder)
         containerStackView.addArrangedSubview(titleLabel)
         containerStackView.addArrangedSubview(inputContainerView)
+        
+        scrollView.addSubview(animatedBackgroundView)
+        animatedBackgroundView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
         
         scrollView.addSubview(containerStackView)
         self.view.addSubview(scrollView)

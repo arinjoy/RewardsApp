@@ -23,6 +23,7 @@
 		0E1192432363A61E00252658 /* LoginInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192422363A61E00252658 /* LoginInteractorSpec.swift */; };
 		0E1192482363CD6B00252658 /* OTPLoginPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */; };
 		0E11924B2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */; };
+		0E11924D23643BE000252658 /* let-it-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E11924C23643BDF00252658 /* let-it-snow.json */; };
 		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
 		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
 		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
@@ -93,6 +94,7 @@
 		0E1192422363A61E00252658 /* LoginInteractorSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractorSpec.swift; sourceTree = "<group>"; };
 		0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginPresenterSpec.swift; sourceTree = "<group>"; };
 		0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPLoginPresenter+TestDoubles.swift"; sourceTree = "<group>"; };
+		0E11924C23643BDF00252658 /* let-it-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "let-it-snow.json"; sourceTree = "<group>"; };
 		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
 		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
@@ -382,6 +384,7 @@
 				0E11923A2363838600252658 /* DomainLayer */,
 				0E2717702361934000883177 /* NetworkLayer */,
 				0E4A6E5C23606EF0003C6399 /* Assets.xcassets */,
+				0E11924C23643BDF00252658 /* let-it-snow.json */,
 				0E4A6E5E23606EF0003C6399 /* LaunchScreen.storyboard */,
 				0E4A6E6123606EF0003C6399 /* Info.plist */,
 			);
@@ -525,6 +528,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E11924D23643BE000252658 /* let-it-snow.json in Resources */,
 				0E4A6E6023606EF0003C6399 /* LaunchScreen.storyboard in Resources */,
 				0E4A6E5D23606EF0003C6399 /* Assets.xcassets in Resources */,
 				0E4A6E5B23606EEE003C6399 /* Main.storyboard in Resources */,
