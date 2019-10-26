@@ -7,18 +7,20 @@
 */
 
 // MARK: - General
-
 "error.general.message" = "Oops.\n\nSomething went wrong!";
 "error.networkConnection.message" = "Oops.\n\nPlease check network connection.";
 
 
-// MARK: - OTP Login related
-
+// MARK: - OTP Login Scene
 "otpLogin.view.title" = "Please enter your OTP";
 "otpLogin.input.placeholder" = "Enter OTP";
 "otpLogin.input.title" = "4 DIGIT CODE";
 "otpLogin.input.error.invalidCode.message" = "INVALID CODE";
 "otpLogin.progress.title" = "Logging you in ...";
+
+// MARK: - Reward Scene
+"reward.view.title" = "Reward";
+
 
 
 

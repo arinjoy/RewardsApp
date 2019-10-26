@@ -13,7 +13,7 @@ import SnapKit
 import PKHUD
 import Lottie
 
-final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
+final class OTPLoginViewController: UIViewController {
 
     // MARK: - View Properties
     
@@ -41,15 +41,14 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
     
     private let animatedBackgroundView: AnimationView = {
         let animationView = AnimationView(name: "let-it-snow")
-        //animationView.contentMode = .center
-        animationView.animationSpeed = 0.5
+        animationView.animationSpeed = 1.0
         animationView.loopMode = LottieLoopMode.loop
         return animationView
     }()
     
     // MARK: - Private Properties
 
-    /// The presenter conforming to the `WeatherListPresenting`
+    /// The presenter conforming to the `OTPLoginPresenting`
     private lazy var presenter: OTPLoginPresenting = {
         let presenter = OTPLoginPresenter(interactor:
             LoginInteractor(
@@ -57,6 +56,7 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
             )
         )
         presenter.display = self
+        presenter.router = OTPLoginRouter(sourceViewController: self)
         return presenter
     }()
     
@@ -101,56 +101,6 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
         
         keyboardTracker.removeNotifications()
     }
-    
-    
-    // MARK: - OTPLoginDisplay
-    
-    func setTitle(_ title: String) {
-        titleLabel.text = title
-    }
-    
-    func setCodeInputPlaceholder(_ placeholder: String, andTitle title: String) {
-        inputTextField.placeholder = placeholder
-        inputTextField.title = title
-    }
-    
-    func showProcessingIndicator(withMessage message: String) {
-        HUD.show(.labeledProgress(title: nil, subtitle: message))
-    }
-    
-    func showProcessingIndicatorSuccess() {
-        HUD.show(.success)
-    }
-    
-    func showProcessingIndicatorFailure() {
-        HUD.show(.error)
-    }
-    
-    func showErrorMessage(_ message: String) {
-        HUD.hide(afterDelay: 1.0) { _ in
-            HUD.flash(.label(message), delay: 1.5)
-        }
-    }
-    
-    func hideProcessingIndicator(afterDelay delay: TimeInterval) {
-        HUD.hide(afterDelay: delay)
-    }
-    
-    func showCodeInputError(message: String?) {
-        inputTextField.errorMessage = message
-    }
-    
-    func hideCodeInputError() {
-        inputTextField.errorMessage = nil
-    }
-    
-    func enableSubmitButton(_ enabled: Bool) {
-        let buttonImage = enabled ?
-            Icon.loginSubmitActive.icon : Icon.loginSubmitInactive.icon
-        submitButton.setImage(buttonImage, for: .normal)
-        submitButton.isEnabled = enabled
-    }
-    
     
     // MARK: - Private Helpers
     
@@ -253,6 +203,57 @@ final class OTPLoginViewController: UIViewController, OTPLoginDisplay {
     @objc private func submitButtonAction() {
         guard let inputCode = inputTextField.text else { return }
         presenter.didSubmitLogin(withCode: inputCode)
+    }
+}
+
+// MARK: - OTPLoginDisplay
+
+extension OTPLoginViewController: OTPLoginDisplay {
+    
+    func setTitle(_ title: String) {
+        titleLabel.text = title
+    }
+    
+    func setCodeInputPlaceholder(_ placeholder: String, andTitle title: String) {
+        inputTextField.placeholder = placeholder
+        inputTextField.title = title
+    }
+    
+    func showProcessingIndicator(withMessage message: String) {
+        HUD.show(.labeledProgress(title: nil, subtitle: message))
+    }
+    
+    func showProcessingIndicatorSuccess() {
+        HUD.show(.success)
+    }
+    
+    func showProcessingIndicatorFailure() {
+        HUD.show(.error)
+    }
+    
+    func showErrorMessage(_ message: String) {
+        HUD.hide(afterDelay: 1.0) { _ in
+            HUD.flash(.label(message), delay: 1.5)
+        }
+    }
+    
+    func hideProcessingIndicator(afterDelay delay: TimeInterval) {
+        HUD.hide(afterDelay: delay)
+    }
+    
+    func showCodeInputError(message: String?) {
+        inputTextField.errorMessage = message
+    }
+    
+    func hideCodeInputError() {
+        inputTextField.errorMessage = nil
+    }
+    
+    func enableSubmitButton(_ enabled: Bool) {
+        let buttonImage = enabled ?
+            Icon.loginSubmitActive.icon : Icon.loginSubmitInactive.icon
+        submitButton.setImage(buttonImage, for: .normal)
+        submitButton.isEnabled = enabled
     }
 }
 

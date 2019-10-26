@@ -24,6 +24,11 @@
 		0E1192482363CD6B00252658 /* OTPLoginPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */; };
 		0E11924B2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */; };
 		0E11924D23643BE000252658 /* let-it-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E11924C23643BDF00252658 /* let-it-snow.json */; };
+		0E119250236441CC00252658 /* RewardDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E11924F236441CC00252658 /* RewardDisplay.swift */; };
+		0E119252236442AD00252658 /* RewardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E119251236442AD00252658 /* RewardViewController.swift */; };
+		0E119254236444A600252658 /* RewardPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E119253236444A600252658 /* RewardPresenter.swift */; };
+		0E1192562364472B00252658 /* deer.json in Resources */ = {isa = PBXBuildFile; fileRef = 0E1192552364472A00252658 /* deer.json */; };
+		0E1192582364497800252658 /* OTPLoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E1192572364497800252658 /* OTPLoginRouter.swift */; };
 		0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717692360791600883177 /* EndpointConfiguration.swift */; };
 		0E27176D236079CA00883177 /* LoginToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176C236079CA00883177 /* LoginToken.swift */; };
 		0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27176E23607A5000883177 /* OTPLoginInput.swift */; };
@@ -95,6 +100,11 @@
 		0E1192472363CD6B00252658 /* OTPLoginPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginPresenterSpec.swift; sourceTree = "<group>"; };
 		0E11924A2363D60000252658 /* OTPLoginPresenter+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OTPLoginPresenter+TestDoubles.swift"; sourceTree = "<group>"; };
 		0E11924C23643BDF00252658 /* let-it-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "let-it-snow.json"; sourceTree = "<group>"; };
+		0E11924F236441CC00252658 /* RewardDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardDisplay.swift; sourceTree = "<group>"; };
+		0E119251236442AD00252658 /* RewardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardViewController.swift; sourceTree = "<group>"; };
+		0E119253236444A600252658 /* RewardPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPresenter.swift; sourceTree = "<group>"; };
+		0E1192552364472A00252658 /* deer.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = deer.json; sourceTree = "<group>"; };
+		0E1192572364497800252658 /* OTPLoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginRouter.swift; sourceTree = "<group>"; };
 		0E2717692360791600883177 /* EndpointConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndpointConfiguration.swift; sourceTree = "<group>"; };
 		0E27176C236079CA00883177 /* LoginToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginToken.swift; sourceTree = "<group>"; };
 		0E27176E23607A5000883177 /* OTPLoginInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPLoginInput.swift; sourceTree = "<group>"; };
@@ -176,6 +186,7 @@
 				0E4A6E5723606EEE003C6399 /* OTPLoginViewController.swift */,
 				0E11921F23624F5700252658 /* OTPLoginDisplay.swift */,
 				0E11922A236252A600252658 /* OTPLoginPresenter.swift */,
+				0E1192572364497800252658 /* OTPLoginRouter.swift */,
 			);
 			path = OTPLogin;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 				0E1192312362FD6D00252658 /* Utils */,
 				0E119221236250F400252658 /* Localization */,
 				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
+				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
 				0E27177C2361AC0100883177 /* Scenes */,
 			);
 			path = PresenentationLayer;
@@ -270,6 +282,16 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		0E11924E236441A600252658 /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				0E11924F236441CC00252658 /* RewardDisplay.swift */,
+				0E119251236442AD00252658 /* RewardViewController.swift */,
+				0E119253236444A600252658 /* RewardPresenter.swift */,
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
 		0E27176B2360796600883177 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,7 +335,7 @@
 		0E27177C2361AC0100883177 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
+				0E11924E236441A600252658 /* Reward */,
 				0E11921E23624F4000252658 /* OTPLogin */,
 			);
 			path = Scenes;
@@ -384,6 +406,7 @@
 				0E11923A2363838600252658 /* DomainLayer */,
 				0E2717702361934000883177 /* NetworkLayer */,
 				0E4A6E5C23606EF0003C6399 /* Assets.xcassets */,
+				0E1192552364472A00252658 /* deer.json */,
 				0E11924C23643BDF00252658 /* let-it-snow.json */,
 				0E4A6E5E23606EF0003C6399 /* LaunchScreen.storyboard */,
 				0E4A6E6123606EF0003C6399 /* Info.plist */,
@@ -529,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0E11924D23643BE000252658 /* let-it-snow.json in Resources */,
+				0E1192562364472B00252658 /* deer.json in Resources */,
 				0E4A6E6023606EF0003C6399 /* LaunchScreen.storyboard in Resources */,
 				0E4A6E5D23606EF0003C6399 /* Assets.xcassets in Resources */,
 				0E4A6E5B23606EEE003C6399 /* Main.storyboard in Resources */,
@@ -617,6 +641,8 @@
 				0E2717732361938A00883177 /* BaseRequest.swift in Sources */,
 				0E4A6E5823606EEE003C6399 /* OTPLoginViewController.swift in Sources */,
 				0E11922023624F5700252658 /* OTPLoginDisplay.swift in Sources */,
+				0E1192582364497800252658 /* OTPLoginRouter.swift in Sources */,
+				0E119254236444A600252658 /* RewardPresenter.swift in Sources */,
 				0E27179B2361CF9200883177 /* HTTPClient.swift in Sources */,
 				0E11923C236383B600252658 /* LoginInteractor.swift in Sources */,
 				0E27176D236079CA00883177 /* LoginToken.swift in Sources */,
@@ -624,11 +650,13 @@
 				0E27177E2361B27000883177 /* APIError.swift in Sources */,
 				0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */,
 				0E27176F23607A5000883177 /* OTPLoginInput.swift in Sources */,
+				0E119252236442AD00252658 /* RewardViewController.swift in Sources */,
 				0E27176A2360791600883177 /* EndpointConfiguration.swift in Sources */,
 				0E1192352362FDB000252658 /* KeyboardTracker.swift in Sources */,
 				0E1192252362513600252658 /* RewardsApp+StringKeys.swift in Sources */,
 				0E1192232362511100252658 /* LocalizationKeys.swift in Sources */,
 				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
+				0E119250236441CC00252658 /* RewardDisplay.swift in Sources */,
 				0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */,
 				0E1192332362FD7F00252658 /* TapDismissManager.swift in Sources */,
 				0E11923923631B3A00252658 /* Theme+Color.swift in Sources */,

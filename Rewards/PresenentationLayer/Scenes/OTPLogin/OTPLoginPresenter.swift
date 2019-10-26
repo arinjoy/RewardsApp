@@ -6,6 +6,8 @@
 //  Copyright © 2019 Arinjoy Biswas. All rights reserved.
 //
 
+import UIKit
+
 protocol OTPLoginPresenting: class {
     
     /// Called when view did become ready
@@ -25,6 +27,9 @@ final class OTPLoginPresenter: OTPLoginPresenting {
     
     /// The front-facing view that conforms to the `OTPLoginDisplay` protocol
     weak var display: OTPLoginDisplay?
+    
+    /// The routing instance for the presenter
+    var router: OTPLoginRouting?
     
     // Constant
     let codeInputMaxLength: Int = 4
@@ -76,6 +81,10 @@ final class OTPLoginPresenter: OTPLoginPresenting {
             
                     self?.display?.showProcessingIndicatorSuccess()
                     self?.display?.hideProcessingIndicator(afterDelay: 1.0)
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
+                        self?.router?.routeToRewardScene()
+                    })
                 
                 case .loginFailed:
                     
