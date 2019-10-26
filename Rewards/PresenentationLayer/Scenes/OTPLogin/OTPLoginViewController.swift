@@ -78,8 +78,11 @@ final class OTPLoginViewController: UIViewController {
         
         keyboardTracker.setScrollView(scrollView)
         tapDismissManager.configure(withTargetView: self.view)
+        
         inputTextField.delegate = self
-        inputTextField.addTarget(self, action: #selector(inputTextFieldDidChange), for: .editingChanged)
+        inputTextField.addTarget(self,
+                                 action: #selector(inputTextFieldDidChange),
+                                 for: .editingChanged)
         
         submitButton.setImage(Icon.loginSubmitInactive.icon, for: .normal)
         submitButton.isEnabled = false
@@ -94,6 +97,8 @@ final class OTPLoginViewController: UIViewController {
         super.viewWillAppear(animated)
         
         keyboardTracker.registerForNotifications()
+        
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -201,6 +206,8 @@ final class OTPLoginViewController: UIViewController {
         inputTextField.errorColor = Theme.errorColor
         inputTextField.lineErrorColor = Theme.errorColor
         inputTextField.textErrorColor = Theme.errorColor
+        
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
     }
     
     @objc private func submitButtonAction() {

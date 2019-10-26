@@ -14,7 +14,7 @@ final class RewardViewController: UIViewController, RewardDisplay {
 
     // MARK: - View Properties
     
-    /// Main Reward view - Deer, or something else as as your Reward
+    /// Main Reward view - Deer, or something else as your Reward
     private let animationRewardView: AnimationView = {
         let animationView = AnimationView()
         animationView.animationSpeed = 0.8
@@ -45,14 +45,11 @@ final class RewardViewController: UIViewController, RewardDisplay {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        self.view.backgroundColor = Theme.darkerBackgroundColor
-        
         configureLayout()
+        applyStyle()
+        animationRewardView.play()
 
         presenter.viewDidBecomeReady()
-        
-        animationRewardView.play()
     }
     
     // MARK: - RewardDisplay
@@ -67,7 +64,7 @@ final class RewardViewController: UIViewController, RewardDisplay {
     
     // MARK: - Private Helpers
     
-    func configureLayout() {
+    private func configureLayout() {
         
         self.view.addSubview(animatedBackgroundView)
         self.view.addSubview(animationRewardView)
@@ -80,5 +77,12 @@ final class RewardViewController: UIViewController, RewardDisplay {
             make.leading.trailing.equalToSuperview()
             make.centerY.equalToSuperview()
         }
+    }
+    
+    private func applyStyle() {
+        self.navigationController?.setNavigationBarHidden(false, animated: false)
+        self.navigationController?.navigationBar.barStyle = .black
+        
+        self.view.backgroundColor = Theme.darkerBackgroundColor
     }
 }

@@ -23,9 +23,9 @@ final class OTPLoginRouter: OTPLoginRouting {
     }
 
     func routeToRewardScene() {
-        let rewardNaviationController = UINavigationController(
-            rootViewController: RewardViewController()
-        )
-        sourceViewController?.show(rewardNaviationController, sender: nil)
+        
+        sourceViewController?.navigationController?.pushViewController(
+            RewardViewController(),
+            animated: true)
     }
 }
