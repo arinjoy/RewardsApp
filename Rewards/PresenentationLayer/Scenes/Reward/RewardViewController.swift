@@ -47,7 +47,6 @@ final class RewardViewController: UIViewController, RewardDisplay {
         
         configureLayout()
         applyStyle()
-        animationRewardView.play()
 
         presenter.viewDidBecomeReady()
     }
@@ -60,6 +59,7 @@ final class RewardViewController: UIViewController, RewardDisplay {
     
     func setAnimationContent(fromName name: String) {
         animationRewardView.animation = Animation.named(name)
+        animationRewardView.play()
     }
     
     // MARK: - Private Helpers
@@ -81,8 +81,6 @@ final class RewardViewController: UIViewController, RewardDisplay {
     
     private func applyStyle() {
         self.navigationController?.setNavigationBarHidden(false, animated: false)
-        self.navigationController?.navigationBar.barStyle = .black
-        
         self.view.backgroundColor = Theme.darkerBackgroundColor
     }
 }
