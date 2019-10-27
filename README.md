@@ -12,7 +12,8 @@ A simple login API is used from here which is dummy and returns very simple `{"s
 API endpoint: http://floral-cherry-7673.getsandbox.com/login
 
 
-### Installation
+## Installation
+
 - Xcode **11**(required)
 - Clean `/DerivedData` folder if any
 - Run the Carthage (version 0.32 or later) update command to install the dependent libraries in the `Cartfile`
@@ -32,14 +33,14 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
 ## Clean Architecture
  - VIPER & MVP - A hybrid
  - Clean communication between **`Display`**, **`Presenter`** and **`Router`** in the view/scene stack
- - Communication between  **`Inteactor`**, **`Service`** in the lower stacks of domain & network layers
+ - Communication between  **`Interactor`**, **`Service`** in the lower stacks of domain & network layers
  - Connectivity of this components are achieved via protocol instances to achieve loose coupling and unit testability
  - `View` (i.e. View Controller) is `Display` itself and contacts its `Presenter`
  - `Presenter` may perform view related logic and immediately talk back to `Display` (for example, input validation, button active/inactive state management etc.)
  - `Presenter` can communicate with underlying `Interactor` layer for more complex task
  - `Interactor` decides all Domain level business logic to take care
  - `Interactor` communicates with underlying `Service` layer
- - `Service` communicates to it underlying `HttpClient` which handles all networking
+ - `Service` communicates to its underlying `HttpClient` which handles all networking
  - `Interactor` gets back information via Rx binding from `Service`
  - `Interactor` parses the data and apply any necessary data transformation
  - `Interactor` gives outcome back to `Presenter` via callbacks
@@ -52,18 +53,25 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
  > Folder / Grouping are done as per below:
  
  Project has targets:
-  - Rewards - main code
-  - RewardsTest - Unit testing of all layers using Quick/Nimble
-  - RewardsUITest - Some automated XCUITests
+  - **Rewards** - The main code
+  - **RewardsTest** - **Unit testing** of all layers using Quick/Nimble
+  - **RewardsUITest** - Some **automated XCUITest**
+  
+ ![](/Screenshots/app-layers.png "")
  
- > The codebase is into 3 layers `PresentationLayer`, `DomainLayer`, & `NetworkLayer`
+ > The codebase grouped into 3 layers - `PresentationLayer`, `DomainLayer`, & `NetworkLayer`
+ 
  
  #### PresentationLayer
- > It has all presnetation logic
+ 
+  > It has all presnetation logic
+  
+ ![](/Screenshots/presentation-layer.png "")
+ 
  - Has some Theme & Util helpers
  - The number of Scenes:
  - `OTPLogin`: The starting page of the app for OTP login
- - `Reward`: The 
+ - `Reward`: The Reward page is navigated when login succeds
  > Breakdown of each `Scene` stack:
   - `ViewController`
   - `Presenter`
@@ -72,7 +80,11 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
   Presenter, Display and Router communication logic are unit tested.
   
  #### DomainLayer
- > It has all domain level logic via Interactor
+ 
+  > It has all domain level logic via Interactor
+ 
+ ![](/Screenshots/domain-layer.png "")
+  
  - `LoginInteractor` is nesessary for OTP login 
  - Data model used `LoginState`
  ```
@@ -86,21 +98,34 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
  - Logic is Unit tested
  
   #### NetworkLayer
- > It has all low level data / netowrkinmg logic via Service & API clients
+  
+ ![](/Screenshots/network-layer.png "")
+ 
+  > It has all domain level logic via Interactor
+ 
  - `BaseRequest`, `OTPLoginRequest`, `IdentityService`
  - `HTTPClient` uses Alamofire to make a POST network call
  - `ObservableDataSource` is used to provide a layer abstraction and to be able to unit test
+ -  `Encodable` Data model used `OTPLoginInput`
  -  `Decodable` Data model used `LoginToken`
  ```
+ struct OTPLoginInput: Encodable {
+ 
+    /// The user typed code to send for authentication
+    let code: String
+ }
+
  struct LoginToken: Decodable {
-    
+ 
     /// The status string which says "Ok" if succeeds
     let status: String
     
     ...
-}
+ }
 ```
  - Most of the logic are unit tested
+ 
+ ![](/Screenshots/testing-groups.png "")
  
  
  #### App Demo
@@ -111,12 +136,12 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
  
  ![](/Screenshots/normal-flow.gif "")
  
-Inline Error handling applied and only upto 4 digit entry is accepted. The submit button does is enabled/disabled based on input, i.e. all 4 digits are entered. 
+Inline Error handling applied and only upto 4 digit entry is accepted. The submit button is enabled/disabled based on input, i.e. when all 4 digits are entered. 
 
 **Error Handling**
  - `Network connection unavailable` error is shown separately
  - Any other error leads in to a generic error message
- - 401 unauthorized state means `LoginFailed` which is terated differently as Login success/failure outcome with inline erro message in red
+ - 401 unauthorized state means `LoginFailed` which is treated differently as Login success/failure outcome with inline erro message in red
  
   ![](/Screenshots/network-error.gif "")
   ![](/Screenshots/unknown-error.gif "")
