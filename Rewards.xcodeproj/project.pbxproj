@@ -37,8 +37,6 @@
 		0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E271777236194DF00883177 /* OTPLoginRequest.swift */; };
 		0E2717792361987000883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
 		0E27177E2361B27000883177 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27177D2361B27000883177 /* APIError.swift */; };
-		0E2717812361C0D000883177 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E27177F2361C0D000883177 /* Nimble.framework */; };
-		0E2717822361C0D000883177 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2717802361C0D000883177 /* Quick.framework */; };
 		0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717892361C11800883177 /* OTPLoginRequestSpec.swift */; };
 		0E2717912361C13D00883177 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
 		0E2717922361C13D00883177 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E27177F2361C0D000883177 /* Nimble.framework */; };
@@ -153,8 +151,6 @@
 			files = (
 				0E11922E2362E28A00252658 /* SkyFloatingLabelTextField.framework in Frameworks */,
 				0E11922F2362E28A00252658 /* Lottie.framework in Frameworks */,
-				0E2717812361C0D000883177 /* Nimble.framework in Frameworks */,
-				0E2717822361C0D000883177 /* Quick.framework in Frameworks */,
 				0E2717792361987000883177 /* RxSwift.framework in Frameworks */,
 				0E4A6E7B23607364003C6399 /* Alamofire.framework in Frameworks */,
 				0E4A6E7C23607364003C6399 /* SnapKit.framework in Frameworks */,
@@ -605,8 +601,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SnapKit.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/PKHUD.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"/$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"/$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
 				"/$(SRCROOT)/Carthage/Build/iOS/SkyFloatingLabelTextField.framework",
 			);

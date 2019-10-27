@@ -90,6 +90,8 @@ final class OTPLoginViewController: UIViewController {
                                for: .touchUpInside)
         
         presenter.viewDidBecomeReady()
+        
+        configureAccessibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -215,6 +217,17 @@ final class OTPLoginViewController: UIViewController {
         guard let inputCode = inputTextField.text else { return }
         presenter.didSubmitLogin(withCode: inputCode)
     }
+    
+    private func configureAccessibility() {
+        titleLabel.accessibilityIdentifier = "OTPLogin.header.label"
+        titleLabel.accessibilityTraits = UIAccessibilityTraits.header
+        
+        inputTextField.isAccessibilityElement = true
+        inputTextField.accessibilityIdentifier = "OTPLogin.code.input"
+        
+        submitButton.accessibilityIdentifier = "OTPLogin.submit.button"
+        submitButton.accessibilityLabel = "Submit OTP"
+    }
 }
 
 // MARK: - OTPLoginDisplay
@@ -228,6 +241,7 @@ extension OTPLoginViewController: OTPLoginDisplay {
     func setCodeInputPlaceholder(_ placeholder: String, andTitle title: String) {
         inputTextField.placeholder = placeholder
         inputTextField.title = title
+        inputTextField.accessibilityHint = title
     }
     
     func showProcessingIndicator(withMessage message: String) {
@@ -254,10 +268,12 @@ extension OTPLoginViewController: OTPLoginDisplay {
     
     func showCodeInputError(message: String?) {
         inputTextField.errorMessage = message
+        inputTextField.accessibilityHint = message
     }
     
     func hideCodeInputError() {
         inputTextField.errorMessage = nil
+        inputTextField.accessibilityHint = inputTextField.title
     }
     
     func enableSubmitButton(_ enabled: Bool) {
