@@ -97,10 +97,7 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
     /// The status string which says "Ok" if succeeds
     let status: String
     
-    // Poteitally there could be more OAuth attributes like:
-    // - Access token
-    // - Refresh token
-    // - Expiry interval
+    ...
 }
 ```
  - Most of the logic are unit tested
