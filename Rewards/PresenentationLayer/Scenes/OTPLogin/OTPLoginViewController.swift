@@ -89,9 +89,10 @@ final class OTPLoginViewController: UIViewController {
                                action: #selector(submitButtonAction),
                                for: .touchUpInside)
         
+        configureAccessibility()
+        
         presenter.viewDidBecomeReady()
         
-        configureAccessibility()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -222,7 +223,6 @@ final class OTPLoginViewController: UIViewController {
         titleLabel.accessibilityIdentifier = "OTPLogin.header.label"
         titleLabel.accessibilityTraits = UIAccessibilityTraits.header
         
-        inputTextField.isAccessibilityElement = true
         inputTextField.accessibilityIdentifier = "OTPLogin.code.input"
         
         submitButton.accessibilityIdentifier = "OTPLogin.submit.button"
