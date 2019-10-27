@@ -9,14 +9,6 @@
 import Foundation
 import RxSwift
 
-/// Enumeration of Login States
-enum LoginState {
-    case loggedIn
-    case loginFailed
-    
-    // TODO: Case for Password Reset or other potential states around  reset/recovery
-}
-
 protocol LoginInteracting {
     
     /// Performs login with OTP code

@@ -15,6 +15,7 @@ protocol ObservableDataSource {
     ///
     /// - Parameter request: A BaseRequest instance that defines the API call
     /// - Returns: a `Single<T>` instance containing the data returned from the API call
-    @discardableResult func fetchSingleObject<T>(with request: BaseRequest) -> Single<T> where T: Decodable
-
+    @discardableResult
+    func fetchSingleObject<T>(with request: BaseRequest) -> Single<T> where T: Decodable
+    
 }

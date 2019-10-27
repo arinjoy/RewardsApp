@@ -57,6 +57,7 @@
 		0E4A6E7D23607364003C6399 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
 		0ECEABCE236481CD000D8D96 /* RewardPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECEABCD236481CD000D8D96 /* RewardPresenter+TestDoubles.swift */; };
 		0ECEABD023648305000D8D96 /* RewardPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECEABCF23648305000D8D96 /* RewardPresenterSpec.swift */; };
+		0ED71BB8236578E40027CD3B /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ED71BB7236578E40027CD3B /* LoginState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		0E4A6E7923607364003C6399 /* PKHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PKHUD.framework; path = Carthage/Build/iOS/PKHUD.framework; sourceTree = "<group>"; };
 		0ECEABCD236481CD000D8D96 /* RewardPresenter+TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RewardPresenter+TestDoubles.swift"; sourceTree = "<group>"; };
 		0ECEABCF23648305000D8D96 /* RewardPresenterSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RewardPresenterSpec.swift; sourceTree = "<group>"; };
+		0ED71BB7236578E40027CD3B /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 		0E11923A2363838600252658 /* DomainLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0ED71BB5236578AC0027CD3B /* Models */,
 				0E11923B236383B600252658 /* LoginInteractor.swift */,
 			);
 			path = DomainLayer;
@@ -444,6 +447,14 @@
 			path = APIClient;
 			sourceTree = "<group>";
 		};
+		0ED71BB5236578AC0027CD3B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0ED71BB7236578E40027CD3B /* LoginState.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -663,6 +674,7 @@
 				0E1192232362511100252658 /* LocalizationKeys.swift in Sources */,
 				0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */,
 				0E119250236441CC00252658 /* RewardDisplay.swift in Sources */,
+				0ED71BB8236578E40027CD3B /* LoginState.swift in Sources */,
 				0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */,
 				0E1192332362FD7F00252658 /* TapDismissManager.swift in Sources */,
 				0E11923923631B3A00252658 /* Theme+Color.swift in Sources */,

@@ -10,9 +10,14 @@ import Foundation
 import RxSwift
 import Alamofire
 
+/// Lower level networking client
 final class HTTPClient: ObservableDataSource {
     
-    @discardableResult func fetchSingleObject<T>(with request: BaseRequest) -> Single<T> where T: Decodable {
+    /// Fetches API call result interms of Rx `Single` for a request
+    /// - Parameter request: The configured URL request
+    @discardableResult func fetchSingleObject<T>(
+        with request: BaseRequest
+    ) -> Single<T> where T: Decodable {
         
         return Single<T>.create { single in
             
@@ -36,6 +41,8 @@ final class HTTPClient: ObservableDataSource {
 
 extension JSONDecoder {
     
+    /// Helper decoder that parses the outcome and detect errors and success response
+    /// via JSON decoder
     func decodeResponse<T: Decodable>(from response: DataResponse<Data>) -> Result<T> {
         
         // Networking and API client related errors here
