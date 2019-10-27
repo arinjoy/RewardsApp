@@ -278,7 +278,6 @@
 		0E27176B2360796600883177 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0E2717722361938A00883177 /* BaseRequest.swift */,
 				0E27176C236079CA00883177 /* LoginToken.swift */,
 				0E27176E23607A5000883177 /* OTPLoginInput.swift */,
 			);
@@ -309,6 +308,7 @@
 		0E271776236194B300883177 /* Requests */ = {
 			isa = PBXGroup;
 			children = (
+				0E2717722361938A00883177 /* BaseRequest.swift */,
 				0E271777236194DF00883177 /* OTPLoginRequest.swift */,
 			);
 			path = Requests;
