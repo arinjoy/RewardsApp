@@ -1,14 +1,14 @@
 # Rewards App
-A fun app made with ❤️ to demonstrate some exmaples of **clean architecture**, code organisation, loose coupling, **unit testing** and some of the best practices and styles used in modern iOS programming using `Swift`.
+A fun app made with ❤️ to demonstrate some examples of **clean architecture**, code organisation, loose coupling, **unit testing** and some of the best practices used in modern iOS programming using `Swift`.
 
 App Goal:
  - Make OTP based login
- - Get your reward (an animation starts playing)
  - Handle input validation, error handling, api call, processing indicators
+ - Get your reward (an animation starts playing)
 
 ![](/Screenshots/normal-flow.gif "")
 
-A simple login API is used from here which is dummy and returns very simple `{"status": "ok"}` as 200 response for the POST call. If login fails, it returns 401 `unauthorized` response as body contains the string as well. 
+A simple login API is which is dummy and returns a simple `{"status": "ok"}` as 200 response for the POST call. If login fails, it returns 401 `unauthorized` response as body contains the string as well. 
 API endpoint: http://floral-cherry-7673.getsandbox.com/login
 
 
@@ -31,20 +31,20 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
  - **`Nimble`** - to pair with Quick 👬
 
 ## Clean Architecture
- - VIPER & MVP - A hybrid
+ - **VIPER** & **MVP** - A hybrid
  - Clean communication between **`Display`**, **`Presenter`** and **`Router`** in the view/scene stack
  - Communication between  **`Interactor`**, **`Service`** in the lower stacks of domain & network layers
  - Connectivity of this components are achieved via protocol instances to achieve loose coupling and unit testability
  - `View` (i.e. View Controller) is `Display` itself and contacts its `Presenter`
  - `Presenter` may perform view related logic and immediately talk back to `Display` (for example, input validation, button active/inactive state management etc.)
  - `Presenter` can communicate with underlying `Interactor` layer for more complex task
- - `Interactor` decides all Domain level business logic to take care
+ - `Interactor` decides all Domain level business logic to take care of
  - `Interactor` communicates with underlying `Service` layer
  - `Service` communicates to its underlying `HttpClient` which handles all networking
  - `Interactor` gets back information via Rx binding from `Service`
  - `Interactor` parses the data and apply any necessary data transformation
  - `Interactor` gives outcome back to `Presenter` via callbacks
- - `Presenter` handles all the presentation reated logic nesessary for view
+ - `Presenter` handles all the presentation reated logic nesessary for the view
  - `Presenter` talks back to `Display`
  - `Presenter` also talks to `Router` to navigate from one scene to another when needed
  
@@ -52,26 +52,26 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
  
  > Folder / Grouping are done as per below:
  
- Project has targets:
+ Project has 3 targets:
   - **Rewards** - The main code
   - **RewardsTest** - **Unit testing** of all layers using Quick/Nimble
   - **RewardsUITest** - Some **automated XCUITest**
   
  ![](/Screenshots/app-layers.png "")
  
- > The codebase grouped into 3 layers - `PresentationLayer`, `DomainLayer`, & `NetworkLayer`
+ > The codebase is grouped into 3 layers - `PresentationLayer`, `DomainLayer`, & `NetworkLayer`
  
  
- #### PresentationLayer
+ #### Presentation Layer
  
-  > It has all presnetation logic
+  > It has all the presnetation logic
   
  ![](/Screenshots/presentation-layer.png "")
  
- - Has some Theme & Util helpers
- - The number of Scenes:
+ - Has helpers such as Theme, Localization, Utils etc.
+ - Has Scenes:
  - `OTPLogin`: The starting page of the app for OTP login
- - `Reward`: The Reward page is navigated when login succeds
+ - `Reward`: The Reward page is navigated when the login succeeds
  > Breakdown of each `Scene` stack:
   - `ViewController`
   - `Presenter`
@@ -79,14 +79,14 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
   - `Router`
   Presenter, Display and Router communication logic are unit tested.
   
- #### DomainLayer
+ #### Domain Layer
  
-  > It has all domain level logic via Interactor
+  > It has all domain level logic via the Interactor
  
  ![](/Screenshots/domain-layer.png "")
   
  - `LoginInteractor` is nesessary for OTP login 
- - Data model used `LoginState`
+ - Data model used - `LoginState`
  ```
  enum LoginState {
     case loggedIn
@@ -97,7 +97,7 @@ API endpoint: http://floral-cherry-7673.getsandbox.com/login
 ```
  - Logic is Unit tested
  
-  #### NetworkLayer
+  #### Network Layer
   
  ![](/Screenshots/network-layer.png "")
  
@@ -141,7 +141,7 @@ Inline Error handling applied and only upto 4 digit entry is accepted. The submi
 **Error Handling**
  - `Network connection unavailable` error is shown separately
  - Any other error leads in to a generic error message
- - 401 unauthorized state means `LoginFailed` which is treated differently as Login success/failure outcome with inline erro message in red
+ - 401 unauthorized state means `LoginFailed` which is treated differently as Login success/failure outcome with inline error message in red
  
   ![](/Screenshots/network-error.gif "")
   ![](/Screenshots/unknown-error.gif "")
