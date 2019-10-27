@@ -29,6 +29,20 @@ class RewardsUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        let elementsQuery = app.scrollViews.otherElements
+        let enterOtpSecureTextField = elementsQuery.secureTextFields["Enter OTP"]
+        enterOtpSecureTextField.tap()
+        
+        let loginIconButton = elementsQuery.buttons["login icon"]
+        loginIconButton.tap()
+        enterOtpSecureTextField.tap()
+        loginIconButton.tap()
+        app.navigationBars["Reward"].buttons["Back"].tap()
+        enterOtpSecureTextField.tap()
+        app/*@START_MENU_TOKEN@*/.keys["Delete"]/*[[".keyboards.keys[\"Delete\"]",".keys[\"Delete\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        
     }
 
 }
