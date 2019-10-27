@@ -70,7 +70,8 @@ final class RewardViewController: UIViewController, RewardDisplay {
         self.view.addSubview(animationRewardView)
         
         animatedBackgroundView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
+            make.leading.trailing.equalToSuperview()
+            make.centerY.equalToSuperview()
         }
         
         animationRewardView.snp.makeConstraints { make in

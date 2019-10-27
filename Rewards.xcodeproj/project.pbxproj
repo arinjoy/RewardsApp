@@ -36,17 +36,14 @@
 		0E271775236193F200883177 /* IdentityService+OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E271774236193F200883177 /* IdentityService+OTP.swift */; };
 		0E271778236194DF00883177 /* OTPLoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E271777236194DF00883177 /* OTPLoginRequest.swift */; };
 		0E2717792361987000883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
-		0E27177A2361989E00883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
 		0E27177E2361B27000883177 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27177D2361B27000883177 /* APIError.swift */; };
 		0E2717812361C0D000883177 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E27177F2361C0D000883177 /* Nimble.framework */; };
 		0E2717822361C0D000883177 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2717802361C0D000883177 /* Quick.framework */; };
 		0E27178A2361C11800883177 /* OTPLoginRequestSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717892361C11800883177 /* OTPLoginRequestSpec.swift */; };
 		0E2717912361C13D00883177 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
 		0E2717922361C13D00883177 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E27177F2361C0D000883177 /* Nimble.framework */; };
-		0E2717932361C13D00883177 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
 		0E2717942361C13D00883177 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2717802361C0D000883177 /* Quick.framework */; };
 		0E2717952361C13D00883177 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7623607364003C6399 /* RxSwift.framework */; };
-		0E2717962361C13D00883177 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
 		0E2717992361CEDD00883177 /* ObservableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2717982361CEDD00883177 /* ObservableDataSource.swift */; };
 		0E27179B2361CF9200883177 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E27179A2361CF9200883177 /* HTTPClient.swift */; };
 		0E3312A22362380C00FF89B5 /* IdentityServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E3312A12362380C00FF89B5 /* IdentityServiceSpec.swift */; };
@@ -60,9 +57,6 @@
 		0E4A6E7B23607364003C6399 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
 		0E4A6E7C23607364003C6399 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
 		0E4A6E7D23607364003C6399 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
-		0E4A6E82236076D9003C6399 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7723607364003C6399 /* Alamofire.framework */; };
-		0E4A6E83236076D9003C6399 /* PKHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7923607364003C6399 /* PKHUD.framework */; };
-		0E4A6E84236076D9003C6399 /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E4A6E7823607364003C6399 /* SnapKit.framework */; };
 		0ECEABCE236481CD000D8D96 /* RewardPresenter+TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECEABCD236481CD000D8D96 /* RewardPresenter+TestDoubles.swift */; };
 		0ECEABD023648305000D8D96 /* RewardPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECEABCF23648305000D8D96 /* RewardPresenterSpec.swift */; };
 /* End PBXBuildFile section */
@@ -148,10 +142,8 @@
 			files = (
 				0E2717912361C13D00883177 /* Alamofire.framework in Frameworks */,
 				0E2717922361C13D00883177 /* Nimble.framework in Frameworks */,
-				0E2717932361C13D00883177 /* PKHUD.framework in Frameworks */,
 				0E2717942361C13D00883177 /* Quick.framework in Frameworks */,
 				0E2717952361C13D00883177 /* RxSwift.framework in Frameworks */,
-				0E2717962361C13D00883177 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,10 +166,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E27177A2361989E00883177 /* RxSwift.framework in Frameworks */,
-				0E4A6E82236076D9003C6399 /* Alamofire.framework in Frameworks */,
-				0E4A6E83236076D9003C6399 /* PKHUD.framework in Frameworks */,
-				0E4A6E84236076D9003C6399 /* SnapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,8 +269,8 @@
 		0E11924E236441A600252658 /* Reward */ = {
 			isa = PBXGroup;
 			children = (
-				0E11924F236441CC00252658 /* RewardDisplay.swift */,
 				0E119251236442AD00252658 /* RewardViewController.swift */,
+				0E11924F236441CC00252658 /* RewardDisplay.swift */,
 				0E119253236444A600252658 /* RewardPresenter.swift */,
 			);
 			path = Reward;
