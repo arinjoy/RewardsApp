@@ -285,8 +285,7 @@
 		0E2717702361934000883177 /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
-				0E27177D2361B27000883177 /* APIError.swift */,
-				0E27179A2361CF9200883177 /* HTTPClient.swift */,
+				0ED71BB4236577F30027CD3B /* APIClient */,
 				0E2717692360791600883177 /* EndpointConfiguration.swift */,
 				0E2717982361CEDD00883177 /* ObservableDataSource.swift */,
 				0E27176B2360796600883177 /* Models */,
@@ -434,6 +433,15 @@
 				0E11923623630A7B00252658 /* Theme+Icon.swift */,
 			);
 			path = Theme;
+			sourceTree = "<group>";
+		};
+		0ED71BB4236577F30027CD3B /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				0E27177D2361B27000883177 /* APIError.swift */,
+				0E27179A2361CF9200883177 /* HTTPClient.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
