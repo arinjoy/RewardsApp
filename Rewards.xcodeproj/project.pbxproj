@@ -192,12 +192,12 @@
 		0E1192302362FD3A00252658 /* PresenentationLayer */ = {
 			isa = PBXGroup;
 			children = (
+				0E27177C2361AC0100883177 /* Scenes */,
+				0E119221236250F400252658 /* Localization */,
 				0ECEABD123650647000D8D96 /* Theme */,
 				0E1192312362FD6D00252658 /* Utils */,
-				0E119221236250F400252658 /* Localization */,
 				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
 				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
-				0E27177C2361AC0100883177 /* Scenes */,
 			);
 			path = PresenentationLayer;
 			sourceTree = "<group>";
