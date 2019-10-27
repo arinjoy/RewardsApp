@@ -122,15 +122,16 @@ Inline Error handling applied and only upto 4 digit entry is accepted. The submi
  - 401 unauthorized state means `LoginFailed` which is terated differently as Login success/failure outcome with inline erro message in red
  
   ![](/Screenshots/network-error.gif "")
-  
   ![](/Screenshots/unknown-error.gif "")
   
-  iPhone-5 screen:
+  iPhone-5 screens:
+  
   ![](/Screenshots/iphone5-1.png "")
   ![](/Screenshots/iphone5-2.png "")
   ![](/Screenshots/iphone5-3.png "")
   
-  iPad Pro screen:
+  iPad Pro screens:
+  
   ![](/Screenshots/ipad-1.png "")
   ![](/Screenshots/ipad-2.png "")
   
