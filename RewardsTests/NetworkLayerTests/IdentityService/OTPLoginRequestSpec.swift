@@ -26,6 +26,8 @@ final class OTPLoginRequestSpec: QuickSpec {
                     expect(request.urlRequest.httpMethod) == HTTPRequestMethod.post.rawValue
         
                     expect(request.urlRequest.url) == EndpointConfiguration.absoluteURL(for: .login)
+                    
+                    expect(request.urlRequest.timeoutInterval) == 10.0
 
                 }
                 

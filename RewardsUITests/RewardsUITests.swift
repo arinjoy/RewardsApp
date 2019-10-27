@@ -18,6 +18,7 @@ final class RewardsUITests: XCTestCase {
     override func tearDown() {
     }
 
+    // MAKE sure internet connection is available for testing
     func testExample() {
 
         let app = XCUIApplication()
@@ -90,7 +91,6 @@ final class RewardsUITests: XCTestCase {
         // After 3 sec, login was unsuccessful, still on OTP login screen
         XCTAssert(app.staticTexts["Please enter your OTP"].exists)
 
-        
         // Tap field again, enter correct code and submit button
         codeInputField.tap()
         codeInputField.clearAndEnterText("1234")
@@ -118,10 +118,9 @@ final class RewardsUITests: XCTestCase {
 }
 
 private extension XCUIElement {
-    /**
-     Removes any current text in the field before typing in the new value
-     - Parameter text: the text to enter into the field
-     */
+    
+    /// Removes any current text in the field before typing in the new value
+    /// - Parameter text: the text to enter into the field
     func clearAndEnterText(_ text: String) {
         guard let stringValue = self.value as? String else {
             XCTFail("Tried to clear and enter text into a non string value")
@@ -130,7 +129,9 @@ private extension XCUIElement {
 
         self.tap()
 
-        let deleteString = String(repeating: XCUIKeyboardKey.delete.rawValue, count: stringValue.count)
+        let deleteString = String(
+            repeating: XCUIKeyboardKey.delete.rawValue,
+            count: stringValue.count)
 
         self.typeText(deleteString)
         self.typeText(text)
