@@ -191,7 +191,7 @@
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		0E1192302362FD3A00252658 /* PresenentationLayer */ = {
+		0E1192302362FD3A00252658 /* PresentationLayer */ = {
 			isa = PBXGroup;
 			children = (
 				0E27177C2361AC0100883177 /* Scenes */,
@@ -201,7 +201,7 @@
 				0E4A6E5523606EEE003C6399 /* AppDelegate.swift */,
 				0E4A6E5923606EEE003C6399 /* Main.storyboard */,
 			);
-			path = PresenentationLayer;
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 		0E1192312362FD6D00252658 /* Utils */ = {
@@ -239,12 +239,12 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
-		0E1192442363CD2500252658 /* PresenentationLayerTests */ = {
+		0E1192442363CD2500252658 /* PresentationLayerTests */ = {
 			isa = PBXGroup;
 			children = (
 				0E1192452363CD3700252658 /* Scenes */,
 			);
-			path = PresenentationLayerTests;
+			path = PresentationLayerTests;
 			sourceTree = "<group>";
 		};
 		0E1192452363CD3700252658 /* Scenes */ = {
@@ -326,7 +326,7 @@
 		0E2717882361C11800883177 /* RewardsTests */ = {
 			isa = PBXGroup;
 			children = (
-				0E1192442363CD2500252658 /* PresenentationLayerTests */,
+				0E1192442363CD2500252658 /* PresentationLayerTests */,
 				0E11923D2363A18100252658 /* DomainLayerTests */,
 				0E2717A12361DE4B00883177 /* NetworkLayerTests */,
 				0E27178B2361C11800883177 /* Info.plist */,
@@ -384,7 +384,7 @@
 		0E4A6E5423606EEE003C6399 /* Rewards */ = {
 			isa = PBXGroup;
 			children = (
-				0E1192302362FD3A00252658 /* PresenentationLayer */,
+				0E1192302362FD3A00252658 /* PresentationLayer */,
 				0E11923A2363838600252658 /* DomainLayer */,
 				0E2717702361934000883177 /* NetworkLayer */,
 				0E4A6E5C23606EF0003C6399 /* Assets.xcassets */,

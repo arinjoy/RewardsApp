@@ -37,8 +37,6 @@ final class LoginInteractor: LoginInteracting {
         self.identityService = identityService
     }
     
-    //let sss = IdentityServiceClient(dataSource: HTTPClient())
-    
     func doLogin(
         withOTP code: String,
         completion: @escaping ((Result<LoginState, APIError>) -> Void)
