@@ -7,7 +7,6 @@
 //
 
 import RxSwift
-import Alamofire
 
 protocol IdentityServiceClientType {
     func otpLogin(withPin pin: String) -> Single<LoginToken>
